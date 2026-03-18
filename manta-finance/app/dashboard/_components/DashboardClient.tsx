@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react'
 import type { DashboardData } from '@/app/api/dashboard/route'
 import SummaryCards from './SummaryCards'
 import PeriodSelector from './PeriodSelector'
+import SalesBarChart from './SalesBarChart'
+import CategoryPieChart from './CategoryPieChart'
+import TopProductsChart from './TopProductsChart'
 
 export default function DashboardClient() {
   const [selectedPeriodId, setSelectedPeriodId] = useState<string | null>(null)
@@ -49,12 +52,22 @@ export default function DashboardClient() {
         />
       </div>
       <SummaryCards summary={dashboardData?.summary ?? null} loading={loading} />
-      {/* Charts placeholder — Plan 03 will replace this */}
-      <div
-        id="charts-placeholder"
-        className="text-gray-400 text-sm text-center py-8"
-      >
-        Grafik akan tersedia setelah komponen chart dibuat.
+      {/* Chart row 1: Sales by customer (full width) */}
+      <SalesBarChart
+        data={dashboardData?.salesByCustomer ?? []}
+        loading={loading}
+      />
+
+      {/* Chart row 2: Category pie + Top products side by side on desktop */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <CategoryPieChart
+          data={dashboardData?.salesByCategory ?? []}
+          loading={loading}
+        />
+        <TopProductsChart
+          data={dashboardData?.topProducts ?? []}
+          loading={loading}
+        />
       </div>
     </div>
   )
