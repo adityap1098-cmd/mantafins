@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 04-stock-sales-views 04-04-PLAN.md
-last_updated: "2026-03-18T23:13:55.423Z"
+stopped_at: Completed 05-finance-receivables 05-01-PLAN.md
+last_updated: "2026-03-18T23:24:25.561Z"
 last_activity: "2026-03-19 — Phase 2 complete: upload flow and HPP/margin calculations verified end-to-end"
 progress:
   total_phases: 6
   completed_phases: 4
-  total_plans: 16
-  completed_plans: 16
+  total_plans: 22
+  completed_plans: 17
   percent: 33
 ---
 
@@ -64,6 +64,7 @@ Progress: [███░░░░░░░] 33% (9 of ~20 plans complete)
 | Phase 04-stock-sales-views P03 | 5 | 1 tasks | 2 files |
 | Phase 04-stock-sales-views P02 | 3min | 2 tasks | 7 files |
 | Phase 04-stock-sales-views P04 | 7min | 2 tasks | 6 files |
+| Phase 05-finance-receivables P01 | 3 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -106,6 +107,7 @@ Recent decisions affecting current work:
 - [Phase 04-stock-sales-views]: SalesTable stub created as Rule 3 auto-fix — SalesClient.tsx imported non-existent SalesTable, blocking build
 - [Phase 04-stock-sales-views]: SalesTable full implementation was pre-committed in plan 04-02 (b9d24e9) — no re-write needed in plan 04-04
 - [Phase 04-stock-sales-views]: SalesClient uses useMemo for filteredRows derivation — avoids re-fetching on filter/sort changes
+- [Phase 05-finance-receivables]: OperationalCost uses standard cuid() @id and DateTime @default(now()) createdAt — consistent with all other models
 
 ### Pending Todos
 
@@ -117,6 +119,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T23:12:54.401Z
-Stopped at: Completed 04-stock-sales-views 04-04-PLAN.md
+Last session: 2026-03-18T23:24:25.559Z
+Stopped at: Completed 05-finance-receivables 05-01-PLAN.md
 Resume file: None
