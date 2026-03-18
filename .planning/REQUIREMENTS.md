@@ -7,9 +7,9 @@
 
 ### Import & Periode
 
-- [ ] **IMP-01**: User dapat membuat periode baru (nama bulan/tahun)
-- [ ] **IMP-02**: User dapat upload file Products Excel → data stock & HPP disimpan sebagai ProductSnapshot untuk periode tersebut
-- [ ] **IMP-03**: User dapat upload file Sales Report Excel → transaksi di-parse dan disimpan sebagai Sale + SaleItem
+- [x] **IMP-01**: User dapat membuat periode baru (nama bulan/tahun)
+- [x] **IMP-02**: User dapat upload file Products Excel → data stock & HPP disimpan sebagai ProductSnapshot untuk periode tersebut
+- [x] **IMP-03**: User dapat upload file Sales Report Excel → transaksi di-parse dan disimpan sebagai Sale + SaleItem
 - [ ] **IMP-04**: Sistem mem-parsing format produk di Sales Report: `"Nama Produk (QTY.0000)"` → `{productName, qty}`
 - [ ] **IMP-05**: Sistem melakukan matching nama produk (case-insensitive) ke ProductSnapshot untuk mendapatkan HPP per item
 - [ ] **IMP-06**: User dapat melihat status import (sukses, warning produk tidak cocok, error)
@@ -112,9 +112,9 @@
 |-------------|-------|--------|
 | AUTH-01 | Phase 1 | Complete |
 | AUTH-02 | Phase 1 | Complete |
-| IMP-01 | Phase 2 | Pending |
-| IMP-02 | Phase 2 | Pending |
-| IMP-03 | Phase 2 | Pending |
+| IMP-01 | Phase 2 | Complete |
+| IMP-02 | Phase 2 | Complete |
+| IMP-03 | Phase 2 | Complete |
 | IMP-04 | Phase 2 | Pending |
 | IMP-05 | Phase 2 | Pending |
 | IMP-06 | Phase 2 | Pending |

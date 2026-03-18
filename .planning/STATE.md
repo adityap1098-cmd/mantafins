@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Phase 1 complete — 01-03 human-verified, ready for Phase 2 planning
-last_updated: "2026-03-18T20:29:05.761Z"
-last_activity: "2026-03-19 — Phase 1 complete: auth flow human-verified (all 8 steps passed)"
+status: in_progress
+stopped_at: "Completed 02-import-and-calculations 02-01-PLAN.md"
+last_updated: "2026-03-19T00:00:00Z"
+last_activity: "2026-03-19 — Phase 2 Plan 1 complete: 5 Prisma models added, db pushed, Prisma client regenerated"
 progress:
   total_phases: 6
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
-  percent: 17
+  total_plans: 4
+  completed_plans: 4
+  percent: 20
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-19)
 
 **Core value:** User uploads 2 Excel files and gets a complete financial report — margin, HPP, receivables — without manual calculation
-**Current focus:** Phase 1 — Foundation & Auth
+**Current focus:** Phase 2 — Import & Calculations
 
 ## Current Position
 
-Phase: 1 of 6 (Foundation & Auth) — COMPLETE
-Next: Phase 2 (Import & Calculations)
-Status: Phase 1 done — all 3 plans executed and human-verified
-Last activity: 2026-03-19 — Phase 1 complete: auth flow human-verified (all 8 steps passed)
+Phase: 2 of 6 (Import & Calculations) — IN PROGRESS (Plan 1 of 6 complete)
+Next: Phase 2 Plan 2 (02-02 — Product Import)
+Status: Phase 2 Plan 1 complete — database schema with 5 models pushed to SQLite
+Last activity: 2026-03-19 — Phase 2 Plan 1 complete: Period, ProductSnapshot, Sale, SaleItem, PaymentLog models added
 
-Progress: [█░░░░░░░░░] 17% (1 of 6 phases complete)
+Progress: [██░░░░░░░░] 20% (4 of ~20 plans complete)
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Progress: [█░░░░░░░░░] 17% (1 of 6 phases complete)
 | Phase 01-foundation-and-auth P01 | 4 | 2 tasks | 8 files |
 | Phase 01-foundation-and-auth P02 | 5 | 2 tasks | 6 files |
 | Phase 01-foundation-and-auth P03 | ~15 min | 3 tasks (2 auto + 1 human-verify) | 6 files |
+| Phase 02-import-and-calculations P01 | 2 min | 2 tasks | 1 file |
 
 ## Accumulated Context
 
@@ -75,6 +76,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation-and-auth]: Next.js 14 cookies() is synchronous — no await on cookieStore call in server components
 - [Phase 01-foundation-and-auth]: Prisma v7 "client" engine requires @prisma/adapter-libsql for SQLite runtime — added to PrismaClient constructor
 - [Phase 01-foundation-and-auth]: Phase 1 fully human-verified 2026-03-19 — all 8 auth flow steps passed
+- [Phase 02-import-and-calculations]: lib/prisma.ts was created in Phase 1 (auth.ts imports it) — no changes needed for Plan 1 Task 2
+- [Phase 02-import-and-calculations]: PaymentLog.saleId is plain String without FK relation to Sale — allows orphaned logs per plan spec
 
 ### Pending Todos
 
@@ -87,5 +90,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-19T00:00:00Z
-Stopped at: Phase 1 complete — 01-03 human-verified, ready for Phase 2 planning
+Stopped at: Completed 02-import-and-calculations 02-01-PLAN.md
 Resume file: None

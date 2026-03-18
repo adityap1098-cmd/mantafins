@@ -51,7 +51,7 @@ Plans:
 **Plans**: 6 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Prisma schema migration (Period, ProductSnapshot, Sale, SaleItem, PaymentLog) + lib/prisma.ts singleton
+- [x] 02-01-PLAN.md — Prisma schema migration (Period, ProductSnapshot, Sale, SaleItem, PaymentLog) + lib/prisma.ts singleton
 - [ ] 02-02-PLAN.md — Install xlsx, create lib/parser/products.ts and lib/parser/sales.ts
 - [ ] 02-03-PLAN.md — Create lib/calculator/margin.ts (HPP, diskon, labaKotor, marginPersen, period summary)
 - [ ] 02-04-PLAN.md — API routes: GET/POST /api/periods, POST /api/upload/products, POST /api/upload/sales
@@ -112,7 +112,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Auth | 3/3 | Complete    | 2026-03-18 |
-| 2. Import & Calculations | 0/6 | Not started | - |
+| 2. Import & Calculations | 1/6 | In Progress | - |
 | 3. Dashboard | 0/TBD | Not started | - |
 | 4. Stock & Sales Views | 0/TBD | Not started | - |
 | 5. Finance & Receivables | 0/TBD | Not started | - |
