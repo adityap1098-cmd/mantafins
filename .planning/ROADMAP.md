@@ -85,7 +85,13 @@ Plans:
   3. User can inline-edit stock quantities and see low-stock alerts (yellow < 50, red < 10)
   4. User can view the transaction table with date, ref, customer, item count, totals, and payment status
   5. User can expand a transaction row to see per-item detail, and filter/sort transactions by customer, date, and status
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — GET /api/stock + PATCH /api/stock/[sku] routes with margin computation and inventory summary
+- [ ] 04-02-PLAN.md — /stock page: sortable/filterable table, inline stock edit, low-stock alerts, inventory summary bar
+- [ ] 04-03-PLAN.md — GET /api/sales route with computed metrics and nested item details
+- [ ] 04-04-PLAN.md — /sales page: expandable transaction table, filter by customer/status/date, sort by date/total/margin
 
 ### Phase 5: Finance & Receivables
 **Goal**: User can see deep P&L reporting, product/customer margin analysis, and manage receivables payments
@@ -119,6 +125,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 1. Foundation & Auth | 3/3 | Complete    | 2026-03-18 |
 | 2. Import & Calculations | 6/6 | Complete    | 2026-03-18 |
 | 3. Dashboard | 3/3 | Complete   | 2026-03-18 |
-| 4. Stock & Sales Views | 0/TBD | Not started | - |
+| 4. Stock & Sales Views | 0/4 | Not started | - |
 | 5. Finance & Receivables | 0/TBD | Not started | - |
 | 6. Export | 0/TBD | Not started | - |
