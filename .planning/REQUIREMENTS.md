@@ -33,12 +33,12 @@
 ### Manajemen Stock
 
 - [x] **STOK-01**: User dapat melihat tabel stock: SKU, nama, kategori, HPP, harga jual, stock, margin/unit, margin %
-- [ ] **STOK-02**: User dapat mengurutkan tabel stock dengan klik header kolom
-- [ ] **STOK-03**: User dapat filter stock by kategori, range HPP, range stock
-- [ ] **STOK-04**: User dapat search produk by nama atau SKU
-- [ ] **STOK-05**: User dapat inline edit jumlah stock (koreksi manual)
+- [x] **STOK-02**: User dapat mengurutkan tabel stock dengan klik header kolom
+- [x] **STOK-03**: User dapat filter stock by kategori, range HPP, range stock
+- [x] **STOK-04**: User dapat search produk by nama atau SKU
+- [x] **STOK-05**: User dapat inline edit jumlah stock (koreksi manual)
 - [x] **STOK-06**: User dapat melihat ringkasan inventory: total nilai HPP, total nilai harga jual, potensi profit
-- [ ] **STOK-07**: Sistem menampilkan alert untuk produk stock < 50 (warning kuning) dan < 10 (warning merah)
+- [x] **STOK-07**: Sistem menampilkan alert untuk produk stock < 50 (warning kuning) dan < 10 (warning merah)
 
 ### Laporan Penjualan
 
@@ -129,12 +129,12 @@
 | DASH-04 | Phase 3 | Complete |
 | DASH-05 | Phase 3 | Complete |
 | STOK-01 | Phase 4 | Complete |
-| STOK-02 | Phase 4 | Pending |
-| STOK-03 | Phase 4 | Pending |
-| STOK-04 | Phase 4 | Pending |
-| STOK-05 | Phase 4 | Pending |
+| STOK-02 | Phase 4 | Complete |
+| STOK-03 | Phase 4 | Complete |
+| STOK-04 | Phase 4 | Complete |
+| STOK-05 | Phase 4 | Complete |
 | STOK-06 | Phase 4 | Complete |
-| STOK-07 | Phase 4 | Pending |
+| STOK-07 | Phase 4 | Complete |
 | SALE-01 | Phase 4 | Complete |
 | SALE-02 | Phase 4 | Complete |
 | SALE-03 | Phase 4 | Pending |
