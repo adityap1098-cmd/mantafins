@@ -13,7 +13,7 @@ From a bare Next.js project to a working internal finance dashboard: first the a
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Auth** - App runs, is accessible, and is protected by password
-- [ ] **Phase 2: Import & Calculations** - User uploads 2 Excel files and all financial metrics are computed
+- [x] **Phase 2: Import & Calculations** - User uploads 2 Excel files and all financial metrics are computed
 - [ ] **Phase 3: Dashboard** - User sees a visual summary of any period at a glance
 - [ ] **Phase 4: Stock & Sales Views** - User browses, filters, and edits operational data tables
 - [ ] **Phase 5: Finance & Receivables** - User sees deep P&L reporting and manages customer receivables
@@ -52,11 +52,11 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Prisma schema migration (Period, ProductSnapshot, Sale, SaleItem, PaymentLog) + lib/prisma.ts singleton
-- [ ] 02-02-PLAN.md — Install xlsx, create lib/parser/products.ts and lib/parser/sales.ts
-- [ ] 02-03-PLAN.md — Create lib/calculator/margin.ts (HPP, diskon, labaKotor, marginPersen, period summary)
-- [ ] 02-04-PLAN.md — API routes: GET/POST /api/periods, POST /api/upload/products, POST /api/upload/sales
-- [ ] 02-05-PLAN.md — Import UI: period manager + file upload panels with status display + dashboard nav link
-- [ ] 02-06-PLAN.md — Human verification of full upload flow end-to-end
+- [x] 02-02-PLAN.md — Install xlsx, create lib/parser/products.ts and lib/parser/sales.ts
+- [x] 02-03-PLAN.md — Create lib/calculator/margin.ts (HPP, diskon, labaKotor, marginPersen, period summary)
+- [x] 02-04-PLAN.md — API routes: GET/POST /api/periods, POST /api/upload/products, POST /api/upload/sales
+- [x] 02-05-PLAN.md — Import UI: period manager + file upload panels with status display + dashboard nav link
+- [x] 02-06-PLAN.md — Human verification of full upload flow end-to-end
 
 ### Phase 3: Dashboard
 **Goal**: User can see a visual financial summary of any period without digging into raw tables
@@ -112,7 +112,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Auth | 3/3 | Complete    | 2026-03-18 |
-| 2. Import & Calculations | 5/6 | In Progress|  |
+| 2. Import & Calculations | 6/6 | Complete    | 2026-03-19 |
 | 3. Dashboard | 0/TBD | Not started | - |
 | 4. Stock & Sales Views | 0/TBD | Not started | - |
 | 5. Finance & Receivables | 0/TBD | Not started | - |
