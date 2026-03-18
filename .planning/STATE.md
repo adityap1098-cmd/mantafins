@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 04-stock-sales-views 04-01-PLAN.md
-last_updated: "2026-03-18T22:58:19.794Z"
+stopped_at: Completed 04-stock-sales-views 04-03-PLAN.md
+last_updated: "2026-03-18T23:02:42.696Z"
 last_activity: "2026-03-19 — Phase 2 complete: upload flow and HPP/margin calculations verified end-to-end"
 progress:
   total_phases: 6
   completed_phases: 3
   total_plans: 16
-  completed_plans: 13
+  completed_plans: 14
   percent: 33
 ---
 
@@ -61,6 +61,7 @@ Progress: [███░░░░░░░] 33% (9 of ~20 plans complete)
 | Phase 03-dashboard P02 | 2 min | 2 tasks | 4 files |
 | Phase 03-dashboard P03 | 3 min | 2 tasks | 4 files |
 | Phase 04-stock-sales-views P01 | 7min | 2 tasks | 4 files |
+| Phase 04-stock-sales-views P03 | 5 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -98,6 +99,7 @@ Recent decisions affecting current work:
 - [Phase 03-dashboard]: PieLabelRenderProps.name carries nameKey value; use props.name not props.category for pie labels
 - [Phase 04-stock-sales-views]: marginPersen uses hargaJual as denominator: retail margin convention (not markup)
 - [Phase 04-stock-sales-views]: Prisma P2025 error code detects not-found on PATCH /api/stock/[sku], returns 404
+- [Phase 04-stock-sales-views]: computeTransactionMetrics returns hppTotal field; mapped to totalHpp in SaleRow for consistent naming with UI
 
 ### Pending Todos
 
@@ -109,6 +111,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T22:58:19.792Z
-Stopped at: Completed 04-stock-sales-views 04-01-PLAN.md
+Last session: 2026-03-18T23:02:42.694Z
+Stopped at: Completed 04-stock-sales-views 04-03-PLAN.md
 Resume file: None

@@ -42,8 +42,8 @@
 
 ### Laporan Penjualan
 
-- [ ] **SALE-01**: User dapat melihat tabel transaksi: tanggal, no ref, konsumen, jumlah item, grand total, HPP total, laba kotor, diskon, status bayar
-- [ ] **SALE-02**: User dapat expand baris transaksi untuk melihat detail item (produk, qty, HPP unit, harga unit)
+- [x] **SALE-01**: User dapat melihat tabel transaksi: tanggal, no ref, konsumen, jumlah item, grand total, HPP total, laba kotor, diskon, status bayar
+- [x] **SALE-02**: User dapat expand baris transaksi untuk melihat detail item (produk, qty, HPP unit, harga unit)
 - [ ] **SALE-03**: User dapat filter transaksi by konsumen, status pembayaran, range tanggal
 - [ ] **SALE-04**: User dapat mengurutkan transaksi by tanggal, total, margin
 
@@ -135,8 +135,8 @@
 | STOK-05 | Phase 4 | Pending |
 | STOK-06 | Phase 4 | Complete |
 | STOK-07 | Phase 4 | Pending |
-| SALE-01 | Phase 4 | Pending |
-| SALE-02 | Phase 4 | Pending |
+| SALE-01 | Phase 4 | Complete |
+| SALE-02 | Phase 4 | Complete |
 | SALE-03 | Phase 4 | Pending |
 | SALE-04 | Phase 4 | Pending |
 | FIN-01 | Phase 5 | Pending |
