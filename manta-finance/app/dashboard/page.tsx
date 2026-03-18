@@ -3,6 +3,7 @@ import { cookies } from 'next/headers'
 import { validateSession } from '@/lib/auth'
 import Link from 'next/link'
 import LogoutButton from './_components/LogoutButton'
+import DashboardClient from './_components/DashboardClient'
 
 export default async function DashboardPage() {
   // Server-side session validation (defense in depth — middleware handles redirect but this double-checks)
@@ -26,10 +27,7 @@ export default async function DashboardPage() {
           Import Data
         </Link>
       </nav>
-      <div className="p-8 text-center text-gray-500">
-        <p className="text-lg font-medium">Dashboard siap digunakan</p>
-        <p className="text-sm mt-2">Fitur dashboard akan tersedia di Phase 3.</p>
-      </div>
+      <DashboardClient />
     </main>
   )
 }
