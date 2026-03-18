@@ -103,7 +103,15 @@ Plans:
   3. User can view a receivables table per customer showing total billed, paid, and outstanding balance
   4. User can record a payment (partial or full) against a specific transaction and the outstanding balance updates immediately
   5. User can view per-customer discount averages and per-product margin tables
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Prisma schema: add OperationalCost model + db push + generate
+- [ ] 05-02-PLAN.md — Finance API: GET /api/finance (P&L + product margins + customer discounts), POST/DELETE /api/finance/costs
+- [ ] 05-03-PLAN.md — Receivables API: GET /api/receivables, POST /api/receivables/payment, GET /api/receivables/customer
+- [ ] 05-04-PLAN.md — Finance page (/finance): P&L table, op costs form, product margin table, customer discount table
+- [ ] 05-05-PLAN.md — Receivables page (/receivables): customer table, expand-to-sales, payment modal, history panel
+- [ ] 05-06-PLAN.md — Nav update (6 links on all pages) + human verification
 
 ### Phase 6: Export
 **Goal**: User can export any slice of financial data to a formatted Excel file ready for business reporting
@@ -126,5 +134,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Import & Calculations | 6/6 | Complete    | 2026-03-18 |
 | 3. Dashboard | 3/3 | Complete   | 2026-03-18 |
 | 4. Stock & Sales Views | 4/4 | Complete   | 2026-03-18 |
-| 5. Finance & Receivables | 0/TBD | Not started | - |
+| 5. Finance & Receivables | 0/6 | Not started | - |
 | 6. Export | 0/TBD | Not started | - |
