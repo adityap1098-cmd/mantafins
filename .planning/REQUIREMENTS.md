@@ -20,7 +20,7 @@
 - [x] **CALC-02**: Sistem menghitung diskon per transaksi: `diskon = SUM(harga×qty) - grand_total`
 - [x] **CALC-03**: Sistem menghitung laba kotor per transaksi: `laba = grand_total - total_hpp`
 - [x] **CALC-04**: Sistem menghitung margin persen per transaksi
-- [ ] **CALC-05**: Sistem menghitung ringkasan keuangan per periode: total penjualan, total HPP, laba kotor, total diskon, piutang aktif, sudah terbayar
+- [x] **CALC-05**: Sistem menghitung ringkasan keuangan per periode: total penjualan, total HPP, laba kotor, total diskon, piutang aktif, sudah terbayar
 
 ### Dashboard Utama
 
@@ -122,7 +122,7 @@
 | CALC-02 | Phase 2 | Complete |
 | CALC-03 | Phase 2 | Complete |
 | CALC-04 | Phase 2 | Complete |
-| CALC-05 | Phase 2 | Pending |
+| CALC-05 | Phase 2 | Complete |
 | DASH-01 | Phase 3 | Pending |
 | DASH-02 | Phase 3 | Pending |
 | DASH-03 | Phase 3 | Pending |

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 02-import-and-calculations 02-04-PLAN.md
-last_updated: "2026-03-18T22:09:44.179Z"
+stopped_at: Completed 02-import-and-calculations 02-05-PLAN.md
+last_updated: "2026-03-18T22:14:02.730Z"
 last_activity: "2026-03-19 — Phase 2 Plan 1 complete: Period, ProductSnapshot, Sale, SaleItem, PaymentLog models added"
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 9
-  completed_plans: 7
+  completed_plans: 8
   percent: 20
 ---
 
@@ -55,6 +55,7 @@ Progress: [██░░░░░░░░] 20% (4 of ~20 plans complete)
 | Phase 01-foundation-and-auth P03 | ~15 min | 3 tasks (2 auto + 1 human-verify) | 6 files |
 | Phase 02-import-and-calculations P01 | 2 min | 2 tasks | 1 file |
 | Phase 02-import-and-calculations P04 | 1 | 2 tasks | 3 files |
+| Phase 02-import-and-calculations P05 | 5 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -81,6 +82,8 @@ Recent decisions affecting current work:
 - [Phase 02-import-and-calculations]: PaymentLog.saleId is plain String without FK relation to Sale — allows orphaned logs per plan spec
 - [Phase 02-import-and-calculations]: Auth pattern in routes: extract cookie token via req.cookies.get(SESSION_COOKIE_NAME)?.value, pass to validateSession(token: string)
 - [Phase 02-import-and-calculations]: computeTransactionMetrics() called but result not stored in Sale row — HPP/margin derived from SaleItems at query time
+- [Phase 02-import-and-calculations]: Import page.tsx is a client component to lift selectedPeriodId state — auth handled by Phase 1 middleware
+- [Phase 02-import-and-calculations]: Native HTML drag-and-drop on div (no react-dropzone) for file upload areas
 
 ### Pending Todos
 
@@ -92,6 +95,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T22:09:44.177Z
-Stopped at: Completed 02-import-and-calculations 02-04-PLAN.md
+Last session: 2026-03-18T22:13:48.248Z
+Stopped at: Completed 02-import-and-calculations 02-05-PLAN.md
 Resume file: None
