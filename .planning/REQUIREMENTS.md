@@ -70,8 +70,8 @@
 
 ### Auth & Keamanan
 
-- [ ] **AUTH-01**: Aplikasi dilindungi dengan password (single-user auth)
-- [ ] **AUTH-02**: Session persists across browser refresh
+- [x] **AUTH-01**: Aplikasi dilindungi dengan password (single-user auth)
+- [x] **AUTH-02**: Session persists across browser refresh
 
 ## v2 Requirements
 
@@ -110,8 +110,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
 | IMP-01 | Phase 2 | Pending |
 | IMP-02 | Phase 2 | Pending |
 | IMP-03 | Phase 2 | Pending |
