@@ -12,3 +12,65 @@ model Session {
   createdAt DateTime @default(now())
   expiresAt DateTime
 }
+
+model Period {
+  id        String            @id @default(cuid())
+  name      String
+  month     Int
+  year      Int
+  createdAt DateTime          @default(now())
+  products  ProductSnapshot[]
+  sales     Sale[]
+}
+
+model ProductSnapshot {
+  id        String  @id @default(cuid())
+  periodId  String
+  period    Period  @relation(fields: [periodId], references: [id])
+  sku       String
+  name      String
+  category  String
+  hpp       Float
+  hargaJual Float
+  stock     Int
+
+  @@unique([periodId, sku])
+}
+
+model Sale {
+  id         String     @id @default(cuid())
+  periodId   String
+  period     Period     @relation(fields: [periodId], references: [id])
+  date       DateTime
+  refNo      String
+  supplier   String
+  customer   String
+  grandTotal Float
+  paid       Float
+  balance    Float
+  status     String
+  items      SaleItem[]
+}
+
+model SaleItem {
+  id          String  @id @default(cuid())
+  saleId      String
+  sale        Sale    @relation(fields: [saleId], references: [id])
+  sku         String
+  productName String
+  qty         Int
+  hppUnit     Float
+  hargaUnit   Float
+  totalHpp    Float
+  totalHarga  Float
+}
+
+model PaymentLog {
+  id       String   @id @default(cuid())
+  saleId   String
+  refNo    String
+  customer String
+  amount   Float
+  date     DateTime
+  note     String?
+}
