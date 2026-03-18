@@ -12,7 +12,7 @@ From a bare Next.js project to a working internal finance dashboard: first the a
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Auth** - App runs, is accessible, and is protected by password
+- [x] **Phase 1: Foundation & Auth** - App runs, is accessible, and is protected by password
 - [ ] **Phase 2: Import & Calculations** - User uploads 2 Excel files and all financial metrics are computed
 - [ ] **Phase 3: Dashboard** - User sees a visual summary of any period at a glance
 - [ ] **Phase 4: Stock & Sales Views** - User browses, filters, and edits operational data tables
@@ -33,9 +33,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Next.js scaffold + Prisma/SQLite setup with Session model
-- [ ] 01-02-PLAN.md — Auth API routes (login/logout/check) + middleware
-- [ ] 01-03-PLAN.md — Login page UI + dashboard placeholder + human verification
+- [x] 01-01-PLAN.md — Next.js scaffold + Prisma/SQLite setup with Session model
+- [x] 01-02-PLAN.md — Auth API routes (login/logout/check) + middleware
+- [x] 01-03-PLAN.md — Login page UI + dashboard placeholder + human verification
 
 ### Phase 2: Import & Calculations
 **Goal**: User uploads 2 Excel files for a period and all financial metrics are automatically computed and persisted
@@ -103,7 +103,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Auth | 2/3 | In Progress|  |
+| 1. Foundation & Auth | 3/3 | Complete | 2026-03-19 |
 | 2. Import & Calculations | 0/TBD | Not started | - |
 | 3. Dashboard | 0/TBD | Not started | - |
 | 4. Stock & Sales Views | 0/TBD | Not started | - |
