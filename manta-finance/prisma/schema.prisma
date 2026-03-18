@@ -14,13 +14,14 @@ model Session {
 }
 
 model Period {
-  id        String            @id @default(cuid())
-  name      String
-  month     Int
-  year      Int
-  createdAt DateTime          @default(now())
-  products  ProductSnapshot[]
-  sales     Sale[]
+  id               String             @id @default(cuid())
+  name             String
+  month            Int
+  year             Int
+  createdAt        DateTime           @default(now())
+  products         ProductSnapshot[]
+  sales            Sale[]
+  operationalCosts OperationalCost[]
 }
 
 model ProductSnapshot {
@@ -73,4 +74,13 @@ model PaymentLog {
   amount   Float
   date     DateTime
   note     String?
+}
+
+model OperationalCost {
+  id          String   @id @default(cuid())
+  periodId    String
+  period      Period   @relation(fields: [periodId], references: [id])
+  description String
+  amount      Float
+  createdAt   DateTime @default(now())
 }
