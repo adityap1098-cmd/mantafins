@@ -68,7 +68,12 @@ Plans:
   3. User sees a pie chart of sales composition by product category
   4. User sees a bar chart of the top 10 best-selling products by quantity
   5. User can switch which period is displayed and all charts and cards update accordingly
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Dashboard data API (GET /api/dashboard) aggregating summary + 3 chart datasets
+- [ ] 03-02-PLAN.md — Summary cards + period selector + dashboard page client/server split
+- [ ] 03-03-PLAN.md — Install Recharts + 3 chart components + wire into DashboardClient
 
 ### Phase 4: Stock & Sales Views
 **Goal**: User can browse, filter, sort, search, and edit operational data in the stock and sales tables
@@ -76,7 +81,7 @@ Plans:
 **Requirements**: STOK-01, STOK-02, STOK-03, STOK-04, STOK-05, STOK-06, STOK-07, SALE-01, SALE-02, SALE-03, SALE-04
 **Success Criteria** (what must be TRUE):
   1. User can view the stock table with SKU, name, category, HPP, sale price, stock quantity, and margin columns
-  2. User can sort the stock table by any column, filter by category/HPP range/stock range, and search by name or SKU
+  2. User can sort the stock table by any column, filter by category/HPP range/stock range, and search by name or SCU
   3. User can inline-edit stock quantities and see low-stock alerts (yellow < 50, red < 10)
   4. User can view the transaction table with date, ref, customer, item count, totals, and payment status
   5. User can expand a transaction row to see per-item detail, and filter/sort transactions by customer, date, and status
@@ -113,7 +118,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Foundation & Auth | 3/3 | Complete    | 2026-03-18 |
 | 2. Import & Calculations | 6/6 | Complete    | 2026-03-18 |
-| 3. Dashboard | 0/TBD | Not started | - |
+| 3. Dashboard | 0/3 | Not started | - |
 | 4. Stock & Sales Views | 0/TBD | Not started | - |
 | 5. Finance & Receivables | 0/TBD | Not started | - |
 | 6. Export | 0/TBD | Not started | - |
