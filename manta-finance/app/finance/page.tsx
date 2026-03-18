@@ -41,6 +41,9 @@ export default async function FinancePage() {
         >
           Finance
         </Link>
+        <Link href="/receivables" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
+          Piutang
+        </Link>
       </nav>
       <FinanceClient />
     </main>

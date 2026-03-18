@@ -38,6 +38,12 @@ export default async function DashboardPage() {
         <Link href="/sales" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
           Penjualan
         </Link>
+        <Link href="/finance" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
+          Finance
+        </Link>
+        <Link href="/receivables" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
+          Piutang
+        </Link>
       </nav>
       <DashboardClient />
     </main>
