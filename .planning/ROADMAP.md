@@ -48,7 +48,15 @@ Plans:
   4. After upload, HPP, discount, gross profit, and margin are calculated automatically for every transaction
   5. User sees a clear status after each upload: success, warnings for unmatched products, or errors
   6. Historical period data does not change when a new period is uploaded
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Prisma schema migration (Period, ProductSnapshot, Sale, SaleItem, PaymentLog) + lib/prisma.ts singleton
+- [ ] 02-02-PLAN.md — Install xlsx, create lib/parser/products.ts and lib/parser/sales.ts
+- [ ] 02-03-PLAN.md — Create lib/calculator/margin.ts (HPP, diskon, labaKotor, marginPersen, period summary)
+- [ ] 02-04-PLAN.md — API routes: GET/POST /api/periods, POST /api/upload/products, POST /api/upload/sales
+- [ ] 02-05-PLAN.md — Import UI: period manager + file upload panels with status display + dashboard nav link
+- [ ] 02-06-PLAN.md — Human verification of full upload flow end-to-end
 
 ### Phase 3: Dashboard
 **Goal**: User can see a visual financial summary of any period without digging into raw tables
@@ -104,7 +112,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Auth | 3/3 | Complete    | 2026-03-18 |
-| 2. Import & Calculations | 0/TBD | Not started | - |
+| 2. Import & Calculations | 0/6 | Not started | - |
 | 3. Dashboard | 0/TBD | Not started | - |
 | 4. Stock & Sales Views | 0/TBD | Not started | - |
 | 5. Finance & Receivables | 0/TBD | Not started | - |
