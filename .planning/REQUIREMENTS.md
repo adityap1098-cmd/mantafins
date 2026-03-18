@@ -24,11 +24,11 @@
 
 ### Dashboard Utama
 
-- [ ] **DASH-01**: User dapat melihat kartu ringkasan periode berjalan (penjualan, HPP, laba kotor, diskon, piutang, terbayar, margin %)
-- [ ] **DASH-02**: User dapat melihat bar chart penjualan per konsumen
-- [ ] **DASH-03**: User dapat melihat pie chart komposisi penjualan per kategori produk
-- [ ] **DASH-04**: User dapat melihat bar chart top 10 produk terlaris (by qty)
-- [ ] **DASH-05**: User dapat memilih periode yang ditampilkan di dashboard
+- [x] **DASH-01**: User dapat melihat kartu ringkasan periode berjalan (penjualan, HPP, laba kotor, diskon, piutang, terbayar, margin %)
+- [x] **DASH-02**: User dapat melihat bar chart penjualan per konsumen
+- [x] **DASH-03**: User dapat melihat pie chart komposisi penjualan per kategori produk
+- [x] **DASH-04**: User dapat melihat bar chart top 10 produk terlaris (by qty)
+- [x] **DASH-05**: User dapat memilih periode yang ditampilkan di dashboard
 
 ### Manajemen Stock
 
@@ -123,11 +123,11 @@
 | CALC-03 | Phase 2 | Complete |
 | CALC-04 | Phase 2 | Complete |
 | CALC-05 | Phase 2 | Complete |
-| DASH-01 | Phase 3 | Pending |
-| DASH-02 | Phase 3 | Pending |
-| DASH-03 | Phase 3 | Pending |
-| DASH-04 | Phase 3 | Pending |
-| DASH-05 | Phase 3 | Pending |
+| DASH-01 | Phase 3 | Complete |
+| DASH-02 | Phase 3 | Complete |
+| DASH-03 | Phase 3 | Complete |
+| DASH-04 | Phase 3 | Complete |
+| DASH-05 | Phase 3 | Complete |
 | STOK-01 | Phase 4 | Pending |
 | STOK-02 | Phase 4 | Pending |
 | STOK-03 | Phase 4 | Pending |
