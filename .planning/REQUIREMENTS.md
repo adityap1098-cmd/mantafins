@@ -108,57 +108,55 @@
 
 ## Traceability
 
-*(Diisi oleh roadmapper)*
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| IMP-01 | — | Pending |
-| IMP-02 | — | Pending |
-| IMP-03 | — | Pending |
-| IMP-04 | — | Pending |
-| IMP-05 | — | Pending |
-| IMP-06 | — | Pending |
-| CALC-01 | — | Pending |
-| CALC-02 | — | Pending |
-| CALC-03 | — | Pending |
-| CALC-04 | — | Pending |
-| CALC-05 | — | Pending |
-| DASH-01 | — | Pending |
-| DASH-02 | — | Pending |
-| DASH-03 | — | Pending |
-| DASH-04 | — | Pending |
-| DASH-05 | — | Pending |
-| STOK-01 | — | Pending |
-| STOK-02 | — | Pending |
-| STOK-03 | — | Pending |
-| STOK-04 | — | Pending |
-| STOK-05 | — | Pending |
-| STOK-06 | — | Pending |
-| STOK-07 | — | Pending |
-| SALE-01 | — | Pending |
-| SALE-02 | — | Pending |
-| SALE-03 | — | Pending |
-| SALE-04 | — | Pending |
-| FIN-01 | — | Pending |
-| FIN-02 | — | Pending |
-| FIN-03 | — | Pending |
-| FIN-04 | — | Pending |
-| FIN-05 | — | Pending |
-| PIUT-01 | — | Pending |
-| PIUT-02 | — | Pending |
-| PIUT-03 | — | Pending |
-| PIUT-04 | — | Pending |
-| EXPT-01 | — | Pending |
-| EXPT-02 | — | Pending |
-| EXPT-03 | — | Pending |
-| AUTH-01 | — | Pending |
-| AUTH-02 | — | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| IMP-01 | Phase 2 | Pending |
+| IMP-02 | Phase 2 | Pending |
+| IMP-03 | Phase 2 | Pending |
+| IMP-04 | Phase 2 | Pending |
+| IMP-05 | Phase 2 | Pending |
+| IMP-06 | Phase 2 | Pending |
+| CALC-01 | Phase 2 | Pending |
+| CALC-02 | Phase 2 | Pending |
+| CALC-03 | Phase 2 | Pending |
+| CALC-04 | Phase 2 | Pending |
+| CALC-05 | Phase 2 | Pending |
+| DASH-01 | Phase 3 | Pending |
+| DASH-02 | Phase 3 | Pending |
+| DASH-03 | Phase 3 | Pending |
+| DASH-04 | Phase 3 | Pending |
+| DASH-05 | Phase 3 | Pending |
+| STOK-01 | Phase 4 | Pending |
+| STOK-02 | Phase 4 | Pending |
+| STOK-03 | Phase 4 | Pending |
+| STOK-04 | Phase 4 | Pending |
+| STOK-05 | Phase 4 | Pending |
+| STOK-06 | Phase 4 | Pending |
+| STOK-07 | Phase 4 | Pending |
+| SALE-01 | Phase 4 | Pending |
+| SALE-02 | Phase 4 | Pending |
+| SALE-03 | Phase 4 | Pending |
+| SALE-04 | Phase 4 | Pending |
+| FIN-01 | Phase 5 | Pending |
+| FIN-02 | Phase 5 | Pending |
+| FIN-03 | Phase 5 | Pending |
+| FIN-04 | Phase 5 | Pending |
+| FIN-05 | Phase 5 | Pending |
+| PIUT-01 | Phase 5 | Pending |
+| PIUT-02 | Phase 5 | Pending |
+| PIUT-03 | Phase 5 | Pending |
+| PIUT-04 | Phase 5 | Pending |
+| EXPT-01 | Phase 6 | Pending |
+| EXPT-02 | Phase 6 | Pending |
+| EXPT-03 | Phase 6 | Pending |
 
 **Coverage:**
 - v1 requirements: 41 total
-- Mapped to phases: 0
-- Unmapped: 41 ⚠️ (will be mapped by roadmapper)
+- Mapped to phases: 41
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-19*
-*Last updated: 2026-03-19 after initial definition*
+*Last updated: 2026-03-19 — all 41 requirements mapped to phases by roadmapper*
