@@ -2,11 +2,10 @@ import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 import { validateSession } from '@/lib/auth'
 import Link from 'next/link'
-import LogoutButton from './_components/LogoutButton'
-import DashboardClient from './_components/DashboardClient'
+import LogoutButton from '@/app/dashboard/_components/LogoutButton'
+import StockClient from './_components/StockClient'
 
-export default async function DashboardPage() {
-  // Server-side session validation (defense in depth — middleware handles redirect but this double-checks)
+export default async function StockPage() {
   const cookieStore = cookies()
   const token = cookieStore.get('manta_session')?.value
   if (!token || !(await validateSession(token))) {
@@ -23,23 +22,23 @@ export default async function DashboardPage() {
         <LogoutButton />
       </header>
       <nav className="bg-white border-b border-gray-100 px-6 py-2 flex gap-4">
-        <Link
-          href="/dashboard"
-          className="text-sm text-blue-600 hover:text-blue-800 font-semibold border-b-2 border-blue-600"
-        >
+        <Link href="/dashboard" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
           Dashboard
         </Link>
         <Link href="/import" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
           Import Data
         </Link>
-        <Link href="/stock" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
+        <Link
+          href="/stock"
+          className="text-sm text-blue-600 font-semibold border-b-2 border-blue-600 pb-0.5"
+        >
           Stock
         </Link>
         <Link href="/sales" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
           Penjualan
         </Link>
       </nav>
-      <DashboardClient />
+      <StockClient />
     </main>
   )
 }
