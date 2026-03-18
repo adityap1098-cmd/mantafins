@@ -103,7 +103,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Auth | 1/3 | In Progress|  |
+| 1. Foundation & Auth | 2/3 | In Progress|  |
 | 2. Import & Calculations | 0/TBD | Not started | - |
 | 3. Dashboard | 0/TBD | Not started | - |
 | 4. Stock & Sales Views | 0/TBD | Not started | - |

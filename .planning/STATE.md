@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-01-PLAN.md — Next.js scaffold + Prisma/SQLite setup
-last_updated: "2026-03-18T20:10:04.878Z"
+stopped_at: Completed 01-02-PLAN.md — Auth API routes + middleware
+last_updated: "2026-03-18T20:14:58.405Z"
 last_activity: 2026-03-19 — Roadmap created, all 41 requirements mapped to 6 phases
 progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
+  completed_plans: 2
   percent: 33
 ---
 
@@ -51,6 +51,7 @@ Progress: [███░░░░░░░] 33%
 
 *Updated after each plan completion*
 | Phase 01-foundation-and-auth P01 | 4 | 2 tasks | 8 files |
+| Phase 01-foundation-and-auth P02 | 5 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,9 @@ Recent decisions affecting current work:
 - [Phase 01-foundation-and-auth]: Prisma v7 moves DATABASE_URL config to prisma.config.ts (not schema.prisma url= field)
 - [Phase 01-foundation-and-auth]: SQLite database at data/manta.db (repo root level, above manta-finance/)
 - [Phase 01-foundation-and-auth]: No src/ directory — app/ at manta-finance/app/ (create-next-app default)
+- [Phase 01-foundation-and-auth]: Files placed in lib/ not src/lib/ — no src/ directory in project (tsconfig @/* maps to ./)
+- [Phase 01-foundation-and-auth]: SESSION_COOKIE_NAME inlined in middleware.ts to avoid Prisma import in Edge runtime
+- [Phase 01-foundation-and-auth]: Middleware does cookie-presence check only — full DB validation in API routes/server components
 
 ### Pending Todos
 
@@ -77,6 +81,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T20:10:04.876Z
-Stopped at: Completed 01-01-PLAN.md — Next.js scaffold + Prisma/SQLite setup
+Last session: 2026-03-18T20:14:58.403Z
+Stopped at: Completed 01-02-PLAN.md — Auth API routes + middleware
 Resume file: None
