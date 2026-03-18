@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: in_progress
-stopped_at: "Completed 02-import-and-calculations 02-01-PLAN.md"
-last_updated: "2026-03-19T00:00:00Z"
-last_activity: "2026-03-19 — Phase 2 Plan 1 complete: 5 Prisma models added, db pushed, Prisma client regenerated"
+status: completed
+stopped_at: Completed 02-import-and-calculations 02-04-PLAN.md
+last_updated: "2026-03-18T22:09:44.179Z"
+last_activity: "2026-03-19 — Phase 2 Plan 1 complete: Period, ProductSnapshot, Sale, SaleItem, PaymentLog models added"
 progress:
   total_phases: 6
   completed_phases: 1
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 9
+  completed_plans: 7
   percent: 20
 ---
 
@@ -54,6 +54,7 @@ Progress: [██░░░░░░░░] 20% (4 of ~20 plans complete)
 | Phase 01-foundation-and-auth P02 | 5 | 2 tasks | 6 files |
 | Phase 01-foundation-and-auth P03 | ~15 min | 3 tasks (2 auto + 1 human-verify) | 6 files |
 | Phase 02-import-and-calculations P01 | 2 min | 2 tasks | 1 file |
+| Phase 02-import-and-calculations P04 | 1 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -78,6 +79,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation-and-auth]: Phase 1 fully human-verified 2026-03-19 — all 8 auth flow steps passed
 - [Phase 02-import-and-calculations]: lib/prisma.ts was created in Phase 1 (auth.ts imports it) — no changes needed for Plan 1 Task 2
 - [Phase 02-import-and-calculations]: PaymentLog.saleId is plain String without FK relation to Sale — allows orphaned logs per plan spec
+- [Phase 02-import-and-calculations]: Auth pattern in routes: extract cookie token via req.cookies.get(SESSION_COOKIE_NAME)?.value, pass to validateSession(token: string)
+- [Phase 02-import-and-calculations]: computeTransactionMetrics() called but result not stored in Sale row — HPP/margin derived from SaleItems at query time
 
 ### Pending Todos
 
@@ -89,6 +92,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T00:00:00Z
-Stopped at: Completed 02-import-and-calculations 02-01-PLAN.md
+Last session: 2026-03-18T22:09:44.177Z
+Stopped at: Completed 02-import-and-calculations 02-04-PLAN.md
 Resume file: None

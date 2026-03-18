@@ -10,16 +10,16 @@
 - [x] **IMP-01**: User dapat membuat periode baru (nama bulan/tahun)
 - [x] **IMP-02**: User dapat upload file Products Excel → data stock & HPP disimpan sebagai ProductSnapshot untuk periode tersebut
 - [x] **IMP-03**: User dapat upload file Sales Report Excel → transaksi di-parse dan disimpan sebagai Sale + SaleItem
-- [ ] **IMP-04**: Sistem mem-parsing format produk di Sales Report: `"Nama Produk (QTY.0000)"` → `{productName, qty}`
-- [ ] **IMP-05**: Sistem melakukan matching nama produk (case-insensitive) ke ProductSnapshot untuk mendapatkan HPP per item
-- [ ] **IMP-06**: User dapat melihat status import (sukses, warning produk tidak cocok, error)
+- [x] **IMP-04**: Sistem mem-parsing format produk di Sales Report: `"Nama Produk (QTY.0000)"` → `{productName, qty}`
+- [x] **IMP-05**: Sistem melakukan matching nama produk (case-insensitive) ke ProductSnapshot untuk mendapatkan HPP per item
+- [x] **IMP-06**: User dapat melihat status import (sukses, warning produk tidak cocok, error)
 
 ### Kalkulasi Keuangan
 
-- [ ] **CALC-01**: Sistem menghitung HPP total per transaksi dari SaleItem
-- [ ] **CALC-02**: Sistem menghitung diskon per transaksi: `diskon = SUM(harga×qty) - grand_total`
-- [ ] **CALC-03**: Sistem menghitung laba kotor per transaksi: `laba = grand_total - total_hpp`
-- [ ] **CALC-04**: Sistem menghitung margin persen per transaksi
+- [x] **CALC-01**: Sistem menghitung HPP total per transaksi dari SaleItem
+- [x] **CALC-02**: Sistem menghitung diskon per transaksi: `diskon = SUM(harga×qty) - grand_total`
+- [x] **CALC-03**: Sistem menghitung laba kotor per transaksi: `laba = grand_total - total_hpp`
+- [x] **CALC-04**: Sistem menghitung margin persen per transaksi
 - [ ] **CALC-05**: Sistem menghitung ringkasan keuangan per periode: total penjualan, total HPP, laba kotor, total diskon, piutang aktif, sudah terbayar
 
 ### Dashboard Utama
@@ -115,13 +115,13 @@
 | IMP-01 | Phase 2 | Complete |
 | IMP-02 | Phase 2 | Complete |
 | IMP-03 | Phase 2 | Complete |
-| IMP-04 | Phase 2 | Pending |
-| IMP-05 | Phase 2 | Pending |
-| IMP-06 | Phase 2 | Pending |
-| CALC-01 | Phase 2 | Pending |
-| CALC-02 | Phase 2 | Pending |
-| CALC-03 | Phase 2 | Pending |
-| CALC-04 | Phase 2 | Pending |
+| IMP-04 | Phase 2 | Complete |
+| IMP-05 | Phase 2 | Complete |
+| IMP-06 | Phase 2 | Complete |
+| CALC-01 | Phase 2 | Complete |
+| CALC-02 | Phase 2 | Complete |
+| CALC-03 | Phase 2 | Complete |
+| CALC-04 | Phase 2 | Complete |
 | CALC-05 | Phase 2 | Pending |
 | DASH-01 | Phase 3 | Pending |
 | DASH-02 | Phase 3 | Pending |
