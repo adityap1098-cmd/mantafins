@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 04-stock-sales-views 04-02-PLAN.md
-last_updated: "2026-03-18T23:09:01.363Z"
+stopped_at: Completed 04-stock-sales-views 04-04-PLAN.md
+last_updated: "2026-03-18T23:12:54.403Z"
 last_activity: "2026-03-19 — Phase 2 complete: upload flow and HPP/margin calculations verified end-to-end"
 progress:
   total_phases: 6
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 16
-  completed_plans: 15
+  completed_plans: 16
   percent: 33
 ---
 
@@ -63,6 +63,7 @@ Progress: [███░░░░░░░] 33% (9 of ~20 plans complete)
 | Phase 04-stock-sales-views P01 | 7min | 2 tasks | 4 files |
 | Phase 04-stock-sales-views P03 | 5 | 1 tasks | 2 files |
 | Phase 04-stock-sales-views P02 | 3min | 2 tasks | 7 files |
+| Phase 04-stock-sales-views P04 | 7min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -103,6 +104,8 @@ Recent decisions affecting current work:
 - [Phase 04-stock-sales-views]: computeTransactionMetrics returns hppTotal field; mapped to totalHpp in SaleRow for consistent naming with UI
 - [Phase 04-stock-sales-views]: Optimistic stock edit recomputes InventorySummary client-side from updated rows — no refetch needed
 - [Phase 04-stock-sales-views]: SalesTable stub created as Rule 3 auto-fix — SalesClient.tsx imported non-existent SalesTable, blocking build
+- [Phase 04-stock-sales-views]: SalesTable full implementation was pre-committed in plan 04-02 (b9d24e9) — no re-write needed in plan 04-04
+- [Phase 04-stock-sales-views]: SalesClient uses useMemo for filteredRows derivation — avoids re-fetching on filter/sort changes
 
 ### Pending Todos
 
@@ -114,6 +117,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T23:09:01.361Z
-Stopped at: Completed 04-stock-sales-views 04-02-PLAN.md
+Last session: 2026-03-18T23:12:54.401Z
+Stopped at: Completed 04-stock-sales-views 04-04-PLAN.md
 Resume file: None
