@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 import { validateSession } from '@/lib/auth'
+import Link from 'next/link'
 import LogoutButton from './_components/LogoutButton'
 
 export default async function DashboardPage() {
@@ -20,6 +21,11 @@ export default async function DashboardPage() {
         </div>
         <LogoutButton />
       </header>
+      <nav className="bg-white border-b border-gray-100 px-6 py-2 flex gap-4">
+        <Link href="/import" className="text-sm text-blue-600 hover:text-blue-800 font-medium">
+          Import Data
+        </Link>
+      </nav>
       <div className="p-8 text-center text-gray-500">
         <p className="text-lg font-medium">Dashboard siap digunakan</p>
         <p className="text-sm mt-2">Fitur dashboard akan tersedia di Phase 3.</p>
