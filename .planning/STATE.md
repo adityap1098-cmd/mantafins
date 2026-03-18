@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 05-finance-receivables 05-03-PLAN.md
-last_updated: "2026-03-18T23:29:05.496Z"
+stopped_at: Completed 05-finance-receivables 05-04-PLAN.md
+last_updated: "2026-03-18T23:35:16.740Z"
 last_activity: "2026-03-19 — Phase 2 complete: upload flow and HPP/margin calculations verified end-to-end"
 progress:
   total_phases: 6
   completed_phases: 4
   total_plans: 22
-  completed_plans: 19
+  completed_plans: 21
   percent: 33
 ---
 
@@ -67,6 +67,8 @@ Progress: [███░░░░░░░] 33% (9 of ~20 plans complete)
 | Phase 05-finance-receivables P01 | 3 | 1 tasks | 1 files |
 | Phase 05-finance-receivables P02 | 5 | 2 tasks | 2 files |
 | Phase 05-finance-receivables P03 | 2 | 2 tasks | 3 files |
+| Phase 05-finance-receivables P05 | 10 | 2 tasks | 5 files |
+| Phase 05-finance-receivables P04 | 4min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -114,6 +116,9 @@ Recent decisions affecting current work:
 - [Phase 05-finance-receivables]: Pre-existing TSC errors in receivables/route.ts (Map iteration TS2802) deferred to 05-06 verification sweep
 - [Phase 05-finance-receivables]: Map iteration uses Array.from(customerMap.entries()) for TS target compatibility (no downlevelIteration)
 - [Phase 05-finance-receivables]: Atomic payment: prisma.$transaction([sale.update, paymentLog.create]) prevents partial state on error
+- [Phase 05-finance-receivables]: Optimistic update after payment POST: recompute totalTerbayar/totalPiutang from updated sales array using reduce — no full refetch needed
+- [Phase 05-finance-receivables]: CustomerHistoryPanel imports SaleRow type from /api/sales/route since /api/receivables/customer returns same shape
+- [Phase 05-finance-receivables]: /finance page reuses shared PeriodSelector and LogoutButton from dashboard — no new nav/auth components needed
 
 ### Pending Todos
 
@@ -125,6 +130,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T23:29:05.494Z
-Stopped at: Completed 05-finance-receivables 05-03-PLAN.md
+Last session: 2026-03-18T23:35:16.737Z
+Stopped at: Completed 05-finance-receivables 05-04-PLAN.md
 Resume file: None
