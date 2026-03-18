@@ -49,18 +49,18 @@
 
 ### Dashboard Finance
 
-- [ ] **FIN-01**: User dapat melihat laporan keuangan lengkap (P&L style): pendapatan, biaya, profitabilitas, piutang, inventory
-- [ ] **FIN-02**: User dapat melihat tabel margin per produk (HPP vs harga jual vs harga aktual per transaksi)
-- [ ] **FIN-03**: User dapat melihat tabel piutang per konsumen (siapa yang belum bayar berapa)
-- [ ] **FIN-04**: User dapat melihat tabel diskon per konsumen (rata-rata diskon ke masing-masing)
-- [ ] **FIN-05**: User dapat input biaya operasional manual untuk perhitungan laba bersih
+- [x] **FIN-01**: User dapat melihat laporan keuangan lengkap (P&L style): pendapatan, biaya, profitabilitas, piutang, inventory
+- [x] **FIN-02**: User dapat melihat tabel margin per produk (HPP vs harga jual vs harga aktual per transaksi)
+- [x] **FIN-03**: User dapat melihat tabel piutang per konsumen (siapa yang belum bayar berapa)
+- [x] **FIN-04**: User dapat melihat tabel diskon per konsumen (rata-rata diskon ke masing-masing)
+- [x] **FIN-05**: User dapat input biaya operasional manual untuk perhitungan laba bersih
 
 ### Piutang & Konsumen
 
-- [ ] **PIUT-01**: User dapat melihat tabel piutang per konsumen: total transaksi, grand total, terbayar, piutang, avg diskon %
-- [ ] **PIUT-02**: User dapat mencatat pembayaran piutang (cicilan atau pelunasan) per transaksi
-- [ ] **PIUT-03**: User dapat melihat history pembelian per konsumen
-- [ ] **PIUT-04**: Balance piutang otomatis terupdate setelah pembayaran dicatat
+- [x] **PIUT-01**: User dapat melihat tabel piutang per konsumen: total transaksi, grand total, terbayar, piutang, avg diskon %
+- [x] **PIUT-02**: User dapat mencatat pembayaran piutang (cicilan atau pelunasan) per transaksi
+- [x] **PIUT-03**: User dapat melihat history pembelian per konsumen
+- [x] **PIUT-04**: Balance piutang otomatis terupdate setelah pembayaran dicatat
 
 ### Export
 
@@ -139,15 +139,15 @@
 | SALE-02 | Phase 4 | Complete |
 | SALE-03 | Phase 4 | Complete |
 | SALE-04 | Phase 4 | Complete |
-| FIN-01 | Phase 5 | Pending |
-| FIN-02 | Phase 5 | Pending |
-| FIN-03 | Phase 5 | Pending |
-| FIN-04 | Phase 5 | Pending |
-| FIN-05 | Phase 5 | Pending |
-| PIUT-01 | Phase 5 | Pending |
-| PIUT-02 | Phase 5 | Pending |
-| PIUT-03 | Phase 5 | Pending |
-| PIUT-04 | Phase 5 | Pending |
+| FIN-01 | Phase 5 | Complete |
+| FIN-02 | Phase 5 | Complete |
+| FIN-03 | Phase 5 | Complete |
+| FIN-04 | Phase 5 | Complete |
+| FIN-05 | Phase 5 | Complete |
+| PIUT-01 | Phase 5 | Complete |
+| PIUT-02 | Phase 5 | Complete |
+| PIUT-03 | Phase 5 | Complete |
+| PIUT-04 | Phase 5 | Complete |
 | EXPT-01 | Phase 6 | Pending |
 | EXPT-02 | Phase 6 | Pending |
 | EXPT-03 | Phase 6 | Pending |

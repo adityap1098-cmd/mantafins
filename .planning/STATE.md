@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 05-finance-receivables 05-02-PLAN.md
-last_updated: "2026-03-18T23:28:41.461Z"
+stopped_at: Completed 05-finance-receivables 05-03-PLAN.md
+last_updated: "2026-03-18T23:29:05.496Z"
 last_activity: "2026-03-19 — Phase 2 complete: upload flow and HPP/margin calculations verified end-to-end"
 progress:
   total_phases: 6
@@ -66,6 +66,7 @@ Progress: [███░░░░░░░] 33% (9 of ~20 plans complete)
 | Phase 04-stock-sales-views P04 | 7min | 2 tasks | 6 files |
 | Phase 05-finance-receivables P01 | 3 | 1 tasks | 1 files |
 | Phase 05-finance-receivables P02 | 5 | 2 tasks | 2 files |
+| Phase 05-finance-receivables P03 | 2 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -111,6 +112,8 @@ Recent decisions affecting current work:
 - [Phase 05-finance-receivables]: OperationalCost uses standard cuid() @id and DateTime @default(now()) createdAt — consistent with all other models
 - [Phase 05-finance-receivables]: FinanceSummary totalDiskon computed as sum of (grossRevenue per sale - grandTotal) — consistent with import calculator approach
 - [Phase 05-finance-receivables]: Pre-existing TSC errors in receivables/route.ts (Map iteration TS2802) deferred to 05-06 verification sweep
+- [Phase 05-finance-receivables]: Map iteration uses Array.from(customerMap.entries()) for TS target compatibility (no downlevelIteration)
+- [Phase 05-finance-receivables]: Atomic payment: prisma.$transaction([sale.update, paymentLog.create]) prevents partial state on error
 
 ### Pending Todos
 
@@ -122,6 +125,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T23:28:19.629Z
-Stopped at: Completed 05-finance-receivables 05-02-PLAN.md
+Last session: 2026-03-18T23:29:05.494Z
+Stopped at: Completed 05-finance-receivables 05-03-PLAN.md
 Resume file: None
