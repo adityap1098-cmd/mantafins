@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-02-PLAN.md — Auth API routes + middleware
-last_updated: "2026-03-18T20:14:58.405Z"
+stopped_at: "01-03 checkpoint: Tasks 1-2 complete, awaiting human-verify of auth flow"
+last_updated: "2026-03-18T20:22:56.439Z"
 last_activity: 2026-03-19 — Roadmap created, all 41 requirements mapped to 6 phases
 progress:
   total_phases: 6
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 2
+  completed_plans: 3
   percent: 33
 ---
 
@@ -70,6 +70,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation-and-auth]: Files placed in lib/ not src/lib/ — no src/ directory in project (tsconfig @/* maps to ./)
 - [Phase 01-foundation-and-auth]: SESSION_COOKIE_NAME inlined in middleware.ts to avoid Prisma import in Edge runtime
 - [Phase 01-foundation-and-auth]: Middleware does cookie-presence check only — full DB validation in API routes/server components
+- [Phase 01-foundation-and-auth]: Prisma v7 requires @prisma/adapter-libsql for SQLite at runtime — added adapter to PrismaClient constructor
+- [Phase 01-foundation-and-auth]: Next.js 14 cookies() is synchronous — no await on cookieStore call in server components
 
 ### Pending Todos
 
@@ -81,6 +83,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T20:14:58.403Z
-Stopped at: Completed 01-02-PLAN.md — Auth API routes + middleware
+Last session: 2026-03-18T20:22:40.550Z
+Stopped at: 01-03 checkpoint: Tasks 1-2 complete, awaiting human-verify of auth flow
 Resume file: None
