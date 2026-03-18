@@ -125,6 +125,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 1. Foundation & Auth | 3/3 | Complete    | 2026-03-18 |
 | 2. Import & Calculations | 6/6 | Complete    | 2026-03-18 |
 | 3. Dashboard | 3/3 | Complete   | 2026-03-18 |
-| 4. Stock & Sales Views | 0/4 | Not started | - |
+| 4. Stock & Sales Views | 1/4 | In Progress|  |
 | 5. Finance & Receivables | 0/TBD | Not started | - |
 | 6. Export | 0/TBD | Not started | - |

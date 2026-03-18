@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 03-dashboard 03-03-PLAN.md
-last_updated: "2026-03-18T22:45:02.411Z"
+stopped_at: Completed 04-stock-sales-views 04-01-PLAN.md
+last_updated: "2026-03-18T22:58:19.794Z"
 last_activity: "2026-03-19 — Phase 2 complete: upload flow and HPP/margin calculations verified end-to-end"
 progress:
   total_phases: 6
   completed_phases: 3
-  total_plans: 12
-  completed_plans: 12
+  total_plans: 16
+  completed_plans: 13
   percent: 33
 ---
 
@@ -60,6 +60,7 @@ Progress: [███░░░░░░░] 33% (9 of ~20 plans complete)
 | Phase 03-dashboard P01 | 5 | 1 tasks | 3 files |
 | Phase 03-dashboard P02 | 2 min | 2 tasks | 4 files |
 | Phase 03-dashboard P03 | 3 min | 2 tasks | 4 files |
+| Phase 04-stock-sales-views P01 | 7min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,8 @@ Recent decisions affecting current work:
 - [Phase 03-dashboard]: DashboardClient owns all client state (selectedPeriodId, dashboardData, loading); page.tsx stays pure server component for auth-only
 - [Phase 03-dashboard]: Recharts v3 tooltip formatters use ValueType union — guard with typeof value === 'number' to avoid TS2322
 - [Phase 03-dashboard]: PieLabelRenderProps.name carries nameKey value; use props.name not props.category for pie labels
+- [Phase 04-stock-sales-views]: marginPersen uses hargaJual as denominator: retail margin convention (not markup)
+- [Phase 04-stock-sales-views]: Prisma P2025 error code detects not-found on PATCH /api/stock/[sku], returns 404
 
 ### Pending Todos
 
@@ -106,6 +109,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T22:44:00.790Z
-Stopped at: Completed 03-dashboard 03-03-PLAN.md
+Last session: 2026-03-18T22:58:19.792Z
+Stopped at: Completed 04-stock-sales-views 04-01-PLAN.md
 Resume file: None
