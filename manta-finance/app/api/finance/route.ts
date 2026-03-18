@@ -53,6 +53,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: 'periodId required' }, { status: 400 })
   }
 
+  try {
   const [sales, opCosts] = await Promise.all([
     prisma.sale.findMany({
       where: { periodId },
@@ -199,4 +200,8 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   )
 
   return NextResponse.json({ summary, productMargins, customerDiscounts })
+  } catch (err) {
+    console.error('[/api/finance] Error:', err)
+    return NextResponse.json({ error: 'Internal server error', detail: String(err) }, { status: 500 })
+  }
 }

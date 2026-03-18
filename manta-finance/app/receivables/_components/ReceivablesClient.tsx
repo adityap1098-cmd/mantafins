@@ -27,6 +27,7 @@ export default function ReceivablesClient() {
   const [selectedPeriodId, setSelectedPeriodId] = useState<string | null>(null)
   const [receivables, setReceivables] = useState<CustomerReceivable[]>([])
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [expandedCustomer, setExpandedCustomer] = useState<string | null>(null)
   const [paymentTarget, setPaymentTarget] = useState<PaymentTarget | null>(null)
   const [historyCustomer, setHistoryCustomer] = useState<string | null>(null)
@@ -35,16 +36,18 @@ export default function ReceivablesClient() {
     if (!selectedPeriodId) return
 
     setLoading(true)
+    setError(null)
     fetch(`/api/receivables?periodId=${selectedPeriodId}`)
       .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch receivables')
+        if (!res.ok) throw new Error(`Server error ${res.status}`)
         return res.json() as Promise<{ receivables: CustomerReceivable[] }>
       })
       .then((data) => {
         setReceivables(data.receivables)
       })
-      .catch(() => {
+      .catch((err: unknown) => {
         setReceivables([])
+        setError(err instanceof Error ? err.message : 'Gagal memuat data piutang')
       })
       .finally(() => {
         setLoading(false)
@@ -107,6 +110,12 @@ export default function ReceivablesClient() {
           onChange={setSelectedPeriodId}
         />
       </div>
+
+      {error && (
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md text-sm">
+          {error}
+        </div>
+      )}
 
       {!loading && receivables.length > 0 && (
         <div className="bg-white rounded border border-gray-200 px-5 py-4 flex items-center gap-3">
