@@ -121,7 +121,13 @@ Plans:
   1. User can select which report sheets to include in the export (financial report, transactions, item detail, receivables, stock, product margin, customer margin)
   2. User can apply filters before export (date range, customer, category, payment status)
   3. The generated Excel file has formatted headers, Rupiah number formatting, auto-width columns, colored header rows, and sub-totals/grand totals
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Install ExcelJS + lib/export/ layer (formatters, 7 sheet builders, buildWorkbook) with TDD
+- [ ] 06-02-PLAN.md — POST /api/export (binary xlsx response) + GET /api/export/preview (row counts)
+- [ ] 06-03-PLAN.md — /export page UI (ExportClient two-column layout) + nav update on all 6 existing pages
+- [ ] 06-04-PLAN.md — Full test suite + human verification of download and formatting
 
 ## Progress
 
@@ -135,4 +141,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 3. Dashboard | 3/3 | Complete   | 2026-03-18 |
 | 4. Stock & Sales Views | 4/4 | Complete   | 2026-03-18 |
 | 5. Finance & Receivables | 6/6 | Complete   | 2026-03-19 |
-| 6. Export | 0/TBD | Not started | - |
+| 6. Export | 0/4 | Not started | - |
