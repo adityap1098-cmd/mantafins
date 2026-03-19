@@ -7,7 +7,6 @@ import {
   FileSpreadsheet,
   Package,
   ShoppingCart,
-  CreditCard,
   Wallet,
   Upload,
   Download,
@@ -15,7 +14,7 @@ import {
   Menu,
   X,
   Fish,
-} from "lucide-react";
+} from "@/_components/Icons";
 import { useState } from "react";
 
 const navItems = [
