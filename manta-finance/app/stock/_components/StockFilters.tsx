@@ -1,19 +1,21 @@
-'use client'
+"use client";
+
+import { Search, Filter, ChevronDown } from "lucide-react";
 
 interface StockFiltersProps {
-  search: string
-  onSearchChange: (value: string) => void
-  categoryFilter: string
-  onCategoryChange: (value: string) => void
-  categories: string[]
-  hppMin: string
-  hppMax: string
-  onHppMinChange: (value: string) => void
-  onHppMaxChange: (value: string) => void
-  stockMin: string
-  stockMax: string
-  onStockMinChange: (value: string) => void
-  onStockMaxChange: (value: string) => void
+  search: string;
+  onSearchChange: (value: string) => void;
+  categoryFilter: string;
+  onCategoryChange: (value: string) => void;
+  categories: string[];
+  hppMin: string;
+  hppMax: string;
+  onHppMinChange: (value: string) => void;
+  onHppMaxChange: (value: string) => void;
+  stockMin: string;
+  stockMax: string;
+  onStockMinChange: (value: string) => void;
+  onStockMaxChange: (value: string) => void;
 }
 
 export default function StockFilters({
@@ -32,57 +34,84 @@ export default function StockFilters({
   onStockMaxChange,
 }: StockFiltersProps) {
   return (
-    <div className="flex flex-wrap gap-2 mb-4">
-      <input
-        type="text"
-        placeholder="Cari nama / SKU..."
-        value={search}
-        onChange={(e) => onSearchChange(e.target.value)}
-        className="w-48 border rounded px-2 py-1 text-sm border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      />
+    <div className="bg-card rounded-xl border border-border p-4">
+      <div className="flex flex-wrap gap-4 items-center">
+        {/* Search */}
+        <div className="relative">
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            <Search className="w-4 h-4" />
+          </div>
+          <input
+            type="text"
+            placeholder="Cari nama / SKU..."
+            value={search}
+            onChange={(e) => onSearchChange(e.target.value)}
+            className="bg-input border border-border rounded-lg pl-10 pr-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring w-48"
+          />
+        </div>
 
-      <select
-        value={categoryFilter}
-        onChange={(e) => onCategoryChange(e.target.value)}
-        className="w-40 border rounded px-2 py-1 text-sm border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      >
-        <option value="all">Semua Kategori</option>
-        {categories.map((cat) => (
-          <option key={cat} value={cat}>
-            {cat}
-          </option>
-        ))}
-      </select>
+        {/* Category filter */}
+        <div className="relative">
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            <Filter className="w-4 h-4" />
+          </div>
+          <select
+            value={categoryFilter}
+            onChange={(e) => onCategoryChange(e.target.value)}
+            className="appearance-none bg-input border border-border rounded-lg pl-10 pr-10 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring cursor-pointer min-w-[160px]"
+          >
+            <option value="all">Semua Kategori</option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none">
+            <ChevronDown className="w-4 h-4" />
+          </div>
+        </div>
 
-      <input
-        type="number"
-        placeholder="HPP Min"
-        value={hppMin}
-        onChange={(e) => onHppMinChange(e.target.value)}
-        className="w-32 border rounded px-2 py-1 text-sm border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      />
-      <input
-        type="number"
-        placeholder="HPP Max"
-        value={hppMax}
-        onChange={(e) => onHppMaxChange(e.target.value)}
-        className="w-32 border rounded px-2 py-1 text-sm border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      />
+        {/* HPP range */}
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-muted-foreground">HPP:</span>
+          <input
+            type="number"
+            placeholder="Min"
+            value={hppMin}
+            onChange={(e) => onHppMinChange(e.target.value)}
+            className="bg-input border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring w-24"
+          />
+          <span className="text-muted-foreground">-</span>
+          <input
+            type="number"
+            placeholder="Max"
+            value={hppMax}
+            onChange={(e) => onHppMaxChange(e.target.value)}
+            className="bg-input border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring w-24"
+          />
+        </div>
 
-      <input
-        type="number"
-        placeholder="Stok Min"
-        value={stockMin}
-        onChange={(e) => onStockMinChange(e.target.value)}
-        className="w-32 border rounded px-2 py-1 text-sm border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      />
-      <input
-        type="number"
-        placeholder="Stok Max"
-        value={stockMax}
-        onChange={(e) => onStockMaxChange(e.target.value)}
-        className="w-32 border rounded px-2 py-1 text-sm border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      />
+        {/* Stock range */}
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-muted-foreground">Stok:</span>
+          <input
+            type="number"
+            placeholder="Min"
+            value={stockMin}
+            onChange={(e) => onStockMinChange(e.target.value)}
+            className="bg-input border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring w-24"
+          />
+          <span className="text-muted-foreground">-</span>
+          <input
+            type="number"
+            placeholder="Max"
+            value={stockMax}
+            onChange={(e) => onStockMaxChange(e.target.value)}
+            className="bg-input border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring w-24"
+          />
+        </div>
+      </div>
     </div>
-  )
+  );
 }

@@ -1,17 +1,18 @@
-'use client'
+"use client";
 
-import type { InventorySummary } from '@/app/api/stock/route'
+import { DollarSign, Tag, TrendingUp } from "lucide-react";
+import type { InventorySummary } from "@/app/api/stock/route";
 
 interface InventorySummaryBarProps {
-  summary: InventorySummary | null
-  loading: boolean
+  summary: InventorySummary | null;
+  loading: boolean;
 }
 
-const idr = new Intl.NumberFormat('id-ID', {
-  style: 'currency',
-  currency: 'IDR',
+const idr = new Intl.NumberFormat("id-ID", {
+  style: "currency",
+  currency: "IDR",
   maximumFractionDigits: 0,
-})
+});
 
 export default function InventorySummaryBar({
   summary,
@@ -19,48 +20,72 @@ export default function InventorySummaryBar({
 }: InventorySummaryBarProps) {
   if (loading) {
     return (
-      <div className="flex gap-4 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[1, 2, 3].map((i) => (
           <div
             key={i}
-            className="flex-1 bg-white border border-gray-200 rounded-lg p-4 animate-pulse"
+            className="bg-card border border-border rounded-xl p-4 animate-pulse"
           >
-            <div className="h-4 bg-gray-200 rounded w-32 mb-2" />
-            <div className="h-6 bg-gray-300 rounded w-24" />
+            <div className="h-4 bg-secondary rounded w-32 mb-2" />
+            <div className="h-7 bg-secondary rounded w-24" />
           </div>
         ))}
       </div>
-    )
+    );
   }
 
   if (!summary) {
     return (
-      <div className="text-sm text-gray-400 mb-4 py-3">
+      <div className="text-sm text-muted-foreground py-3 bg-card rounded-xl border border-border px-4">
         Pilih periode untuk melihat ringkasan
       </div>
-    )
+    );
   }
 
   const stats = [
-    { label: 'Total Nilai HPP', value: idr.format(summary.totalHppValue) },
     {
-      label: 'Total Nilai Harga Jual',
-      value: idr.format(summary.totalHargaJualValue),
+      label: "Total Nilai HPP",
+      value: idr.format(summary.totalHppValue),
+      icon: DollarSign,
+      colorClass: "text-muted-foreground",
     },
-    { label: 'Potensi Profit', value: idr.format(summary.potentialProfit) },
-  ]
+    {
+      label: "Total Nilai Harga Jual",
+      value: idr.format(summary.totalHargaJualValue),
+      icon: Tag,
+      colorClass: "text-primary",
+    },
+    {
+      label: "Potensi Profit",
+      value: idr.format(summary.potentialProfit),
+      icon: TrendingUp,
+      colorClass: "text-success",
+    },
+  ];
 
   return (
-    <div className="flex gap-4 mb-4">
-      {stats.map((stat) => (
-        <div
-          key={stat.label}
-          className="flex-1 bg-white border border-gray-200 rounded-lg p-4"
-        >
-          <p className="text-xs text-gray-500 mb-1">{stat.label}</p>
-          <p className="text-lg font-semibold text-gray-800">{stat.value}</p>
-        </div>
-      ))}
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {stats.map((stat) => {
+        const Icon = stat.icon;
+        return (
+          <div
+            key={stat.label}
+            className="bg-card border border-border rounded-xl p-4 hover:border-primary/30 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <div className={`p-1.5 rounded-lg bg-secondary ${stat.colorClass}`}>
+                <Icon className="w-4 h-4" />
+              </div>
+              <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                {stat.label}
+              </p>
+            </div>
+            <p className={`text-xl font-bold ${stat.colorClass}`}>
+              {stat.value}
+            </p>
+          </div>
+        );
+      })}
     </div>
-  )
+  );
 }

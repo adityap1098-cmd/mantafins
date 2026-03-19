@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   BarChart,
@@ -8,53 +8,74 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from 'recharts'
+} from "recharts";
+import { TrendingUp } from "lucide-react";
 
 interface TopProductsChartProps {
-  data: { productName: string; qty: number }[]
-  loading: boolean
+  data: { productName: string; qty: number }[];
+  loading: boolean;
 }
 
 export default function TopProductsChart({
   data,
   loading,
 }: TopProductsChartProps) {
-  const chartHeight = Math.max(300, data.length * 40)
+  const chartHeight = Math.max(300, data.length * 40);
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-      <h3 className="text-sm font-semibold text-gray-700 mb-3">
-        Top 10 Produk Terlaris (by Qty)
-      </h3>
+    <div className="bg-card rounded-xl border border-border p-6">
+      <div className="flex items-center gap-2 mb-4">
+        <TrendingUp className="w-5 h-5 text-success" />
+        <h3 className="text-sm font-semibold text-foreground">
+          Top 10 Produk Terlaris (by Qty)
+        </h3>
+      </div>
 
       {loading ? (
-        <div className="animate-pulse bg-gray-100 rounded h-64" />
+        <div className="animate-pulse bg-secondary rounded h-64" />
       ) : data.length === 0 ? (
-        <div className="h-64 flex items-center justify-center text-gray-400 text-sm">
+        <div className="h-64 flex items-center justify-center text-muted-foreground text-sm">
           Tidak ada data penjualan
         </div>
       ) : (
         <ResponsiveContainer width="100%" height={chartHeight}>
           <BarChart layout="vertical" data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-            <XAxis type="number" tick={{ fontSize: 11 }} />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="hsl(var(--border))"
+              horizontal={false}
+            />
+            <XAxis
+              type="number"
+              tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+              axisLine={{ stroke: "hsl(var(--border))" }}
+              tickLine={{ stroke: "hsl(var(--border))" }}
+            />
             <YAxis
               type="category"
               dataKey="productName"
-              width={180}
-              tick={{ fontSize: 11 }}
+              width={160}
+              tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+              axisLine={{ stroke: "hsl(var(--border))" }}
+              tickLine={{ stroke: "hsl(var(--border))" }}
             />
             <Tooltip
+              contentStyle={{
+                backgroundColor: "hsl(var(--popover))",
+                border: "1px solid hsl(var(--border))",
+                borderRadius: "8px",
+                color: "hsl(var(--popover-foreground))",
+              }}
               formatter={(value) =>
-                typeof value === 'number'
-                  ? [value + ' pcs', 'Qty']
-                  : [String(value), 'Qty']
+                typeof value === "number"
+                  ? [value + " pcs", "Qty"]
+                  : [String(value), "Qty"]
               }
             />
-            <Bar dataKey="qty" fill="#10b981" radius={[0, 4, 4, 0]} />
+            <Bar dataKey="qty" fill="hsl(var(--success))" radius={[0, 4, 4, 0]} />
           </BarChart>
         </ResponsiveContainer>
       )}
     </div>
-  )
+  );
 }

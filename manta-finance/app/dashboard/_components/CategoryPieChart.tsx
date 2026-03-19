@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   PieChart,
@@ -8,35 +8,36 @@ import {
   Legend,
   ResponsiveContainer,
   type PieLabelRenderProps,
-} from 'recharts'
+} from "recharts";
+import { PieChartIcon } from "lucide-react";
 
 interface CategoryPieChartProps {
-  data: { category: string; total: number }[]
-  loading: boolean
+  data: { category: string; total: number }[];
+  loading: boolean;
 }
 
+// Cyan/teal-based color palette for dark theme
 const COLORS = [
-  '#3b82f6',
-  '#10b981',
-  '#f59e0b',
-  '#ef4444',
-  '#8b5cf6',
-  '#06b6d4',
-  '#f97316',
-  '#ec4899',
-]
+  "#06b6d4", // cyan-500
+  "#14b8a6", // teal-500
+  "#10b981", // emerald-500
+  "#22d3ee", // cyan-400
+  "#2dd4bf", // teal-400
+  "#34d399", // emerald-400
+  "#0891b2", // cyan-600
+  "#0d9488", // teal-600
+];
 
-const idrFormatter = new Intl.NumberFormat('id-ID', {
-  style: 'currency',
-  currency: 'IDR',
+const idrFormatter = new Intl.NumberFormat("id-ID", {
+  style: "currency",
+  currency: "IDR",
   minimumFractionDigits: 0,
-})
+});
 
 function renderLabel(props: PieLabelRenderProps): string {
-  const category = props.name ?? ''
-  const percent = typeof props.percent === 'number' ? props.percent : 0
-  if (!category) return ''
-  return `${category} ${(percent * 100).toFixed(1)}%`
+  const percent = typeof props.percent === "number" ? props.percent : 0;
+  if (percent < 0.05) return "";
+  return `${(percent * 100).toFixed(0)}%`;
 }
 
 export default function CategoryPieChart({
@@ -44,15 +45,18 @@ export default function CategoryPieChart({
   loading,
 }: CategoryPieChartProps) {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-      <h3 className="text-sm font-semibold text-gray-700 mb-3">
-        Komposisi Penjualan per Kategori
-      </h3>
+    <div className="bg-card rounded-xl border border-border p-6">
+      <div className="flex items-center gap-2 mb-4">
+        <PieChartIcon className="w-5 h-5 text-primary" />
+        <h3 className="text-sm font-semibold text-foreground">
+          Komposisi Penjualan per Kategori
+        </h3>
+      </div>
 
       {loading ? (
-        <div className="animate-pulse bg-gray-100 rounded h-64" />
+        <div className="animate-pulse bg-secondary rounded h-64" />
       ) : data.length === 0 ? (
-        <div className="h-64 flex items-center justify-center text-gray-400 text-sm">
+        <div className="h-64 flex items-center justify-center text-muted-foreground text-sm">
           Tidak ada data penjualan
         </div>
       ) : (
@@ -64,9 +68,12 @@ export default function CategoryPieChart({
               nameKey="category"
               cx="50%"
               cy="50%"
-              outerRadius={100}
+              outerRadius={90}
+              innerRadius={50}
               label={renderLabel}
               labelLine={false}
+              stroke="hsl(var(--card))"
+              strokeWidth={2}
             >
               {data.map((_, index) => (
                 <Cell
@@ -76,14 +83,29 @@ export default function CategoryPieChart({
               ))}
             </Pie>
             <Tooltip
+              contentStyle={{
+                backgroundColor: "hsl(var(--popover))",
+                border: "1px solid hsl(var(--border))",
+                borderRadius: "8px",
+                color: "hsl(var(--popover-foreground))",
+              }}
               formatter={(value) =>
-                typeof value === 'number' ? idrFormatter.format(value) : String(value)
+                typeof value === "number"
+                  ? idrFormatter.format(value)
+                  : String(value)
               }
             />
-            <Legend iconType="circle" iconSize={10} />
+            <Legend
+              iconType="circle"
+              iconSize={8}
+              wrapperStyle={{ color: "hsl(var(--foreground))" }}
+              formatter={(value) => (
+                <span className="text-muted-foreground text-xs">{value}</span>
+              )}
+            />
           </PieChart>
         </ResponsiveContainer>
       )}
     </div>
-  )
+  );
 }
