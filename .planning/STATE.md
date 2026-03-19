@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 06-01-PLAN.md
-last_updated: "2026-03-19T04:34:23.964Z"
+stopped_at: Completed 06-02-PLAN.md
+last_updated: "2026-03-19T04:39:22.195Z"
 last_activity: "2026-03-19 — Phase 2 complete: upload flow and HPP/margin calculations verified end-to-end"
 progress:
   total_phases: 6
   completed_phases: 5
   total_plans: 26
-  completed_plans: 23
+  completed_plans: 24
   percent: 33
 ---
 
@@ -71,6 +71,7 @@ Progress: [███░░░░░░░] 33% (9 of ~20 plans complete)
 | Phase 05-finance-receivables P04 | 4min | 2 tasks | 6 files |
 | Phase 05-finance-receivables P06 | 5 | 2 tasks | 4 files |
 | Phase 06-export P01 | 5 | 6 tasks | 11 files |
+| Phase 06-export P02 | 3 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -124,6 +125,8 @@ Recent decisions affecting current work:
 - [Phase 05-finance-receivables]: Phase 5 human-verified: Finance page shows Rp 23.830.960 revenue, Piutang 7 customers Rp 18.928.960 — all 9 verification steps passed
 - [Phase 06-export]: buildWorkbook is async to match ExcelJS.Workbook.xlsx.writeBuffer() async pattern downstream
 - [Phase 06-export]: Each sheet builder only accepts filters relevant to it — date/customer for transaksi/detailItem, customer/paymentStatus for piutang, category for stock/marginProduk, none for marginKonsumen
+- [Phase 06-export]: Binary route uses new Response(buffer) not NextResponse — NextResponse wraps buffer in JSON and corrupts it
+- [Phase 06-export]: FinanceSummary for laporanKeuangan sheet uses netProfit field (= labaBersih) — matched sheet builder interface from Plan 01
 
 ### Pending Todos
 
@@ -135,6 +138,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T04:34:23.961Z
-Stopped at: Completed 06-01-PLAN.md
+Last session: 2026-03-19T04:39:13.123Z
+Stopped at: Completed 06-02-PLAN.md
 Resume file: None
