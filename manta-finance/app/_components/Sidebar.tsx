@@ -14,7 +14,7 @@ import {
   Menu,
   X,
   Fish,
-} from "@/_components/Icons";
+} from "./Icons";
 import { useState } from "react";
 
 const navItems = [

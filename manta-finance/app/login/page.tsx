@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Fish, Eye, EyeOff, Loader2 } from "@/_components/Icons";
+import { Fish, Eye, EyeOff, Loader2 } from "../_components/Icons";
 
 export default function LoginPage() {
   const router = useRouter();
