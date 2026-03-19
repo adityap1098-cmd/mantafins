@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 06-02-PLAN.md
-last_updated: "2026-03-19T04:39:22.195Z"
+stopped_at: Completed 06-03-PLAN.md
+last_updated: "2026-03-19T04:44:15.332Z"
 last_activity: "2026-03-19 — Phase 2 complete: upload flow and HPP/margin calculations verified end-to-end"
 progress:
   total_phases: 6
   completed_phases: 5
   total_plans: 26
-  completed_plans: 24
+  completed_plans: 25
   percent: 33
 ---
 
@@ -72,6 +72,7 @@ Progress: [███░░░░░░░] 33% (9 of ~20 plans complete)
 | Phase 05-finance-receivables P06 | 5 | 2 tasks | 4 files |
 | Phase 06-export P01 | 5 | 6 tasks | 11 files |
 | Phase 06-export P02 | 3 | 2 tasks | 2 files |
+| Phase 06-export P03 | 5 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -127,6 +128,8 @@ Recent decisions affecting current work:
 - [Phase 06-export]: Each sheet builder only accepts filters relevant to it — date/customer for transaksi/detailItem, customer/paymentStatus for piutang, category for stock/marginProduk, none for marginKonsumen
 - [Phase 06-export]: Binary route uses new Response(buffer) not NextResponse — NextResponse wraps buffer in JSON and corrupts it
 - [Phase 06-export]: FinanceSummary for laporanKeuangan sheet uses netProfit field (= labaBersih) — matched sheet builder interface from Plan 01
+- [Phase 06-export]: ExportClient useEffect on selectedPeriodId change fetches /api/export/preview for row counts
+- [Phase 06-export]: periodLabel derived by replacing spaces with dashes in period.name (Maret 2026 -> Maret-2026)
 
 ### Pending Todos
 
@@ -138,6 +141,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T04:39:13.123Z
-Stopped at: Completed 06-02-PLAN.md
+Last session: 2026-03-19T04:44:15.330Z
+Stopped at: Completed 06-03-PLAN.md
 Resume file: None
