@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { Upload, FileSpreadsheet } from "lucide-react";
 
 interface UploadPanelProps {
   periodId: string;
@@ -52,14 +53,17 @@ function FileUploadArea({
   }
 
   return (
-    <div className="border border-gray-200 rounded-lg p-5">
-      <h3 className="font-medium text-gray-700 mb-3">{label}</h3>
+    <div className="border border-border rounded-xl p-5 bg-card/50">
+      <h3 className="font-medium text-foreground mb-3 flex items-center gap-2">
+        <FileSpreadsheet className="h-5 w-5 text-primary" />
+        {label}
+      </h3>
       <div
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
         onClick={() => !disabled && inputRef.current?.click()}
-        className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors
-          ${disabled ? "border-gray-200 bg-gray-50 cursor-not-allowed" : "border-blue-300 hover:border-blue-500 hover:bg-blue-50 cursor-pointer"}
+        className={`border-2 border-dashed rounded-xl p-8 text-center transition-all
+          ${disabled ? "border-border/50 bg-muted/30 cursor-not-allowed" : "border-primary/30 hover:border-primary hover:bg-primary/5 cursor-pointer"}
           ${uploading ? "opacity-60" : ""}`}
       >
         <input
@@ -70,12 +74,13 @@ function FileUploadArea({
           disabled={disabled || uploading}
           className="hidden"
         />
+        <Upload className={`h-10 w-10 mx-auto mb-3 ${disabled ? "text-muted-foreground/50" : "text-primary/70"}`} />
         {uploading ? (
-          <p className="text-gray-500 text-sm">Mengunggah...</p>
+          <p className="text-muted-foreground text-sm">Mengunggah...</p>
         ) : disabled ? (
-          <p className="text-gray-400 text-sm">Pilih periode terlebih dahulu</p>
+          <p className="text-muted-foreground/70 text-sm">Pilih periode terlebih dahulu</p>
         ) : (
-          <p className="text-gray-500 text-sm">
+          <p className="text-muted-foreground text-sm">
             Klik atau drag &amp; drop file Excel (.xlsx)
           </p>
         )}
@@ -83,14 +88,14 @@ function FileUploadArea({
 
       {result && (
         <div
-          className={`mt-3 p-3 rounded text-sm
-            ${result.type === "success" ? "bg-green-50 text-green-700" : ""}
-            ${result.type === "warning" ? "bg-yellow-50 text-yellow-700" : ""}
-            ${result.type === "error" ? "bg-red-50 text-red-700" : ""}`}
+          className={`mt-3 p-3 rounded-lg text-sm
+            ${result.type === "success" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : ""}
+            ${result.type === "warning" ? "bg-amber-500/10 text-amber-400 border border-amber-500/20" : ""}
+            ${result.type === "error" ? "bg-destructive/10 text-destructive border border-destructive/20" : ""}`}
         >
           <p>{result.message}</p>
           {result.warnings && result.warnings.length > 0 && (
-            <ul className="mt-2 list-disc list-inside">
+            <ul className="mt-2 list-disc list-inside opacity-80">
               {result.warnings.map((w, i) => (
                 <li key={i}>{w}</li>
               ))}
@@ -142,8 +147,8 @@ export default function UploadPanel({ periodId }: UploadPanelProps) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">Upload File</h2>
+    <div className="bg-card border border-border rounded-xl p-6">
+      <h2 className="text-lg font-semibold text-foreground mb-4">Upload File</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <FileUploadArea
           label="1. Data Produk (Products Excel)"

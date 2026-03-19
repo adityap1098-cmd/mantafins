@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { Download, FileSpreadsheet, Filter, Calendar } from 'lucide-react'
 
 type SheetKey =
   | 'laporanKeuangan'
@@ -124,21 +125,24 @@ export default function ExportClient({ periods }: Props) {
   }
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">Export Excel</h2>
+    <div>
+      <h2 className="text-2xl font-bold text-foreground mb-6">Export Excel</h2>
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Left panel — config */}
         <div className="lg:col-span-3 space-y-6">
           {/* Period selector */}
-          <div className="bg-white rounded-lg border border-gray-200 p-5">
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Periode</h3>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <Calendar className="h-4 w-4 text-primary" />
+              Periode
+            </h3>
             {periods.length === 0 ? (
-              <p className="text-sm text-gray-400">Tidak ada periode tersedia.</p>
+              <p className="text-sm text-muted-foreground">Tidak ada periode tersedia.</p>
             ) : (
               <select
                 value={selectedPeriodId}
                 onChange={(e) => setSelectedPeriodId(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
               >
                 {periods.map((p) => (
                   <option key={p.id} value={p.id}>
@@ -150,69 +154,77 @@ export default function ExportClient({ periods }: Props) {
           </div>
 
           {/* Sheet selection */}
-          <div className="bg-white rounded-lg border border-gray-200 p-5">
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Sheet yang Diekspor</h3>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <FileSpreadsheet className="h-4 w-4 text-primary" />
+              Sheet yang Diekspor
+            </h3>
             <div className="space-y-2">
               {ALL_SHEET_KEYS.map((key) => (
-                <label key={key} className="flex items-center gap-2 cursor-pointer">
+                <label key={key} className="flex items-center gap-2 cursor-pointer group">
                   <input
                     type="checkbox"
                     checked={sheets[key]}
                     onChange={(e) =>
                       setSheets((prev) => ({ ...prev, [key]: e.target.checked }))
                     }
-                    className="w-4 h-4 text-blue-600 rounded border-gray-300"
+                    className="w-4 h-4 text-primary bg-input border-border rounded focus:ring-primary/50"
                   />
-                  <span className="text-sm text-gray-700">{SHEET_LABELS[key]}</span>
+                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                    {SHEET_LABELS[key]}
+                  </span>
                 </label>
               ))}
             </div>
           </div>
 
           {/* Filters */}
-          <div className="bg-white rounded-lg border border-gray-200 p-5">
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Filter (Opsional)</h3>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <Filter className="h-4 w-4 text-primary" />
+              Filter (Opsional)
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs text-gray-500 mb-1">Tanggal Dari</label>
+                <label className="block text-xs text-muted-foreground mb-1">Tanggal Dari</label>
                 <input
                   type="date"
                   value={filters.dateFrom}
                   onChange={(e) => setFilters((f) => ({ ...f, dateFrom: e.target.value }))}
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                 />
               </div>
               <div>
-                <label className="block text-xs text-gray-500 mb-1">Tanggal Sampai</label>
+                <label className="block text-xs text-muted-foreground mb-1">Tanggal Sampai</label>
                 <input
                   type="date"
                   value={filters.dateTo}
                   onChange={(e) => setFilters((f) => ({ ...f, dateTo: e.target.value }))}
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                 />
               </div>
               <div>
-                <label className="block text-xs text-gray-500 mb-1">Customer</label>
+                <label className="block text-xs text-muted-foreground mb-1">Customer</label>
                 <input
                   type="text"
                   value={filters.customer}
                   onChange={(e) => setFilters((f) => ({ ...f, customer: e.target.value }))}
                   placeholder="Nama customer..."
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                 />
               </div>
               <div>
-                <label className="block text-xs text-gray-500 mb-1">Kategori</label>
+                <label className="block text-xs text-muted-foreground mb-1">Kategori</label>
                 <input
                   type="text"
                   value={filters.category}
                   onChange={(e) => setFilters((f) => ({ ...f, category: e.target.value }))}
                   placeholder="Nama kategori..."
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                 />
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-xs text-gray-500 mb-1">Status Pembayaran</label>
+                <label className="block text-xs text-muted-foreground mb-1">Status Pembayaran</label>
                 <select
                   value={filters.paymentStatus}
                   onChange={(e) =>
@@ -221,7 +233,7 @@ export default function ExportClient({ periods }: Props) {
                       paymentStatus: e.target.value as 'all' | 'paid' | 'unpaid',
                     }))
                   }
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                 >
                   <option value="all">All</option>
                   <option value="paid">Paid</option>
@@ -234,23 +246,23 @@ export default function ExportClient({ periods }: Props) {
 
         {/* Right panel — preview */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-lg border border-gray-200 p-5 sticky top-6">
-            <h3 className="text-sm font-semibold text-gray-700 mb-4">Preview Export</h3>
+          <div className="bg-card border border-border rounded-xl p-5 sticky top-6">
+            <h3 className="text-sm font-semibold text-foreground mb-4">Preview Export</h3>
             {selectedSheetKeys.length === 0 ? (
-              <p className="text-sm text-gray-400 mb-4">Pilih minimal satu sheet.</p>
+              <p className="text-sm text-muted-foreground mb-4">Pilih minimal satu sheet.</p>
             ) : (
               <div className="space-y-2 mb-4">
                 {selectedSheetKeys.map((key) => (
-                  <div key={key} className="flex items-center justify-between py-1 border-b border-gray-50 last:border-0">
-                    <span className="text-sm text-gray-700">{SHEET_LABELS[key]}</span>
-                    <span className="text-sm font-medium text-gray-900">
+                  <div key={key} className="flex items-center justify-between py-1 border-b border-border/50 last:border-0">
+                    <span className="text-sm text-muted-foreground">{SHEET_LABELS[key]}</span>
+                    <span className="text-sm font-medium text-foreground">
                       {previewCounts[key] !== undefined ? previewCounts[key] : '-'} baris
                     </span>
                   </div>
                 ))}
-                <div className="flex items-center justify-between pt-2 text-xs text-gray-500">
+                <div className="flex items-center justify-between pt-2 text-xs text-muted-foreground">
                   <span>Total sheet dipilih</span>
-                  <span className="font-semibold">{selectedSheetKeys.length} / 7</span>
+                  <span className="font-semibold text-foreground">{selectedSheetKeys.length} / 7</span>
                 </div>
               </div>
             )}
@@ -258,13 +270,14 @@ export default function ExportClient({ periods }: Props) {
             <button
               onClick={handleExport}
               disabled={loading || !selectedPeriodId || selectedSheetKeys.length === 0}
-              className="w-full bg-blue-600 text-white text-sm font-semibold py-2.5 px-4 rounded-md hover:bg-blue-700 disabled:bg-blue-300 disabled:cursor-not-allowed transition-colors"
+              className="w-full bg-primary text-primary-foreground text-sm font-semibold py-2.5 px-4 rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
             >
+              <Download className="h-4 w-4" />
               {loading ? 'Generating...' : 'Export Excel'}
             </button>
 
             {error && (
-              <p className="mt-3 text-xs text-red-600 bg-red-50 border border-red-200 rounded-md px-3 py-2">
+              <p className="mt-3 text-xs text-destructive bg-destructive/10 border border-destructive/20 rounded-lg px-3 py-2">
                 {error}
               </p>
             )}

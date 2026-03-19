@@ -67,8 +67,8 @@ export default function PeriodManager({ onPeriodSelect }: PeriodManagerProps) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow p-6 mb-6">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">Periode</h2>
+    <div className="bg-card border border-border rounded-xl p-6 mb-6">
+      <h2 className="text-lg font-semibold text-foreground mb-4">Periode</h2>
 
       <form onSubmit={handleCreate} className="flex gap-3 mb-4 flex-wrap">
         <input
@@ -76,7 +76,7 @@ export default function PeriodManager({ onPeriodSelect }: PeriodManagerProps) {
           placeholder="Nama periode (misal: Maret 2026)"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 text-sm flex-1 min-w-48"
+          className="bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground flex-1 min-w-48 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
           required
         />
         <input
@@ -86,7 +86,7 @@ export default function PeriodManager({ onPeriodSelect }: PeriodManagerProps) {
           onChange={(e) => setMonth(e.target.value)}
           min={1}
           max={12}
-          className="border border-gray-300 rounded px-3 py-2 text-sm w-32"
+          className="bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground w-32 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
           required
         />
         <input
@@ -95,29 +95,29 @@ export default function PeriodManager({ onPeriodSelect }: PeriodManagerProps) {
           value={year}
           onChange={(e) => setYear(e.target.value)}
           min={2020}
-          className="border border-gray-300 rounded px-3 py-2 text-sm w-28"
+          className="bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground w-28 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
           required
         />
         <button
           type="submit"
           disabled={creating}
-          className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 disabled:opacity-50"
+          className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 disabled:opacity-50 transition-colors"
         >
           {creating ? "Membuat..." : "Buat Periode"}
         </button>
       </form>
 
-      {error && <p className="text-red-600 text-sm mb-3">{error}</p>}
+      {error && <p className="text-destructive text-sm mb-3">{error}</p>}
 
       {periods.length > 0 && (
         <div>
-          <label className="block text-sm text-gray-600 mb-1">
+          <label className="block text-sm text-muted-foreground mb-2">
             Pilih Periode Aktif:
           </label>
           <select
             value={selectedPeriodId}
             onChange={(e) => handleSelect(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-2 text-sm w-full max-w-sm"
+            className="bg-input border border-border rounded-lg px-3 py-2 text-sm text-foreground w-full max-w-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
           >
             <option value="">-- Pilih periode --</option>
             {periods.map((p) => (
