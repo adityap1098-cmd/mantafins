@@ -12,6 +12,7 @@
     "@libsql/client": "^0.17.0",
     "@prisma/adapter-libsql": "^7.5.0",
     "@prisma/client": "^7.5.0",
+    "exceljs": "^4.4.0",
     "jose": "^6.2.1",
     "next": "14.2.35",
     "prisma": "^7.5.0",
