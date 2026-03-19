@@ -44,6 +44,9 @@ export default async function DashboardPage() {
         <Link href="/receivables" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
           Piutang
         </Link>
+        <Link href="/export" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
+          Export
+        </Link>
       </nav>
       <DashboardClient />
     </main>

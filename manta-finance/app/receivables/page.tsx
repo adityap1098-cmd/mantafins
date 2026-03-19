@@ -44,6 +44,9 @@ export default async function ReceivablesPage() {
         >
           Piutang
         </Link>
+        <Link href="/export" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
+          Export
+        </Link>
       </nav>
       <ReceivablesClient />
     </main>

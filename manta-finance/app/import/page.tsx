@@ -38,6 +38,9 @@ export default function ImportPage() {
         <Link href="/receivables" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
           Piutang
         </Link>
+        <Link href="/export" className="text-sm text-gray-600 hover:text-blue-800 font-medium">
+          Export
+        </Link>
       </nav>
       <div className="max-w-4xl mx-auto p-8">
         <h1 className="text-2xl font-bold text-gray-900 mb-8">Import Data</h1>
