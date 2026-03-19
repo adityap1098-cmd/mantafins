@@ -64,9 +64,9 @@
 
 ### Export
 
-- [ ] **EXPT-01**: User dapat memilih data yang mau di-export (checklist: laporan keuangan, transaksi, detail item, piutang, stock, margin produk, margin konsumen)
-- [ ] **EXPT-02**: User dapat filter data sebelum export (range tanggal, konsumen, kategori, status bayar)
-- [ ] **EXPT-03**: Sistem generate file Excel dengan format rapi: header bisnis, judul sheet+periode, format Rupiah, auto-width, warna header, sub-total & grand total
+- [x] **EXPT-01**: User dapat memilih data yang mau di-export (checklist: laporan keuangan, transaksi, detail item, piutang, stock, margin produk, margin konsumen)
+- [x] **EXPT-02**: User dapat filter data sebelum export (range tanggal, konsumen, kategori, status bayar)
+- [x] **EXPT-03**: Sistem generate file Excel dengan format rapi: header bisnis, judul sheet+periode, format Rupiah, auto-width, warna header, sub-total & grand total
 
 ### Auth & Keamanan
 
@@ -148,9 +148,9 @@
 | PIUT-02 | Phase 5 | Complete |
 | PIUT-03 | Phase 5 | Complete |
 | PIUT-04 | Phase 5 | Complete |
-| EXPT-01 | Phase 6 | Pending |
-| EXPT-02 | Phase 6 | Pending |
-| EXPT-03 | Phase 6 | Pending |
+| EXPT-01 | Phase 6 | Complete |
+| EXPT-02 | Phase 6 | Complete |
+| EXPT-03 | Phase 6 | Complete |
 
 **Coverage:**
 - v1 requirements: 41 total
