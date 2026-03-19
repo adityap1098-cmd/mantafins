@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Import & Calculations** - User uploads 2 Excel files and all financial metrics are computed
 - [x] **Phase 3: Dashboard** - User sees a visual summary of any period at a glance (completed 2026-03-18)
 - [x] **Phase 4: Stock & Sales Views** - User browses, filters, and edits operational data tables (completed 2026-03-18)
-- [ ] **Phase 5: Finance & Receivables** - User sees deep P&L reporting and manages customer receivables
+- [x] **Phase 5: Finance & Receivables** - User sees deep P&L reporting and manages customer receivables (completed 2026-03-19)
 - [ ] **Phase 6: Export** - User exports any slice of data to formatted Excel
 
 ## Phase Details
@@ -134,5 +134,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Import & Calculations | 6/6 | Complete    | 2026-03-18 |
 | 3. Dashboard | 3/3 | Complete   | 2026-03-18 |
 | 4. Stock & Sales Views | 4/4 | Complete   | 2026-03-18 |
-| 5. Finance & Receivables | 5/6 | In Progress|  |
+| 5. Finance & Receivables | 6/6 | Complete   | 2026-03-19 |
 | 6. Export | 0/TBD | Not started | - |
