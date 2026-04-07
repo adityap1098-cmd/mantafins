@@ -1,0 +1,93 @@
+# ─── Dependencies ──────────────────────────────────────────────
+node_modules/
+*/node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# ─── Next.js build output ──────────────────────────────────────
+.next/
+*/.next/
+out/
+build/
+dist/
+
+# ─── Production secrets & env ──────────────────────────────────
+.env
+.env*.local
+.env.production
+.env.development
+*/.env
+*/.env*.local
+
+# ─── Database (per-environment, never commit) ──────────────────
+data/
+*/data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+manta.db*
+
+# ─── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ─── Testing ───────────────────────────────────────────────────
+coverage/
+*.lcov
+.nyc_output
+
+# ─── IDE & OS ──────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── TypeScript build cache ────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ─── Vercel ────────────────────────────────────────────────────
+.vercel
+
+# ─── Tooling & local artifacts ─────────────────────────────────
+.bg-shell/
+.observer.lock
+.playwright-mcp/
+.planning/
+.gsd/
+
+# ─── Local Excel/data files ────────────────────────────────────
+*.xlsx
+*.xls
+products_*.xlsx
+sales_report*.xlsx
+Manta-Racing-*.xlsx
+
+# ─── Local screenshots & images (development) ──────────────────
+*-page.png
+ring-check*.png
+SS*.png
+"manta racing.jpeg"
+"full design sample.txt"
+
+# ─── Deploy & utility scripts (local-only) ─────────────────────
+deploy*.py
+redeploy*.py
+fix_nginx.py
+fix_vps.py
+check_vps.py
+debug_login.py
+manta-finance.tar.gz
+manta-updates.tar.gz
+
+# ─── Plan files (local-only) ───────────────────────────────────
+plan_*.md
+manta-racing-full-redesign.html

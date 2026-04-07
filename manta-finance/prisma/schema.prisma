@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlite"
+}
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+}
+model Period {
+  id               String             @id @default(cuid())
+  name             String
+  month            Int
+  year             Int
+  createdAt        DateTime           @default(now())
+  products         ProductSnapshot[]
+  sales            Sale[]
+  operationalCosts OperationalCost[]
+}
+model ProductSnapshot {
+  id        String  @id @default(cuid())
+  periodId  String
+  period    Period  @relation(fields: [periodId], references: [id])
+  sku       String
+  name      String
+  category  String
+  hpp       Float
+  hargaJual Float
+  stock     Int
+  @@unique([periodId, sku])
+}
+// ─── Master Product (global, not per-period) ────────────────────────
+model Product {
+  id        String     @id @default(cuid())
+  sku       String     @unique
+  name      String
+  category  String
+  hpp       Float
+  hargaJual Float
+  stock     Int        @default(0)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  stockLogs StockLog[]
+}
+model StockLog {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  type      String   // "restock" | "sale" | "adjustment"
+  qty       Int      // positive = add, negative = reduce
+  note      String?
+  createdAt DateTime @default(now())
+}
+// ─── Existing models ────────────────────────────────────────────────
+model Sale {
+  id         String     @id @default(cuid())
+  periodId   String
+  period     Period     @relation(fields: [periodId], references: [id])
+  date       DateTime
+  refNo      String
+  supplier   String
+  customer   String
+  grandTotal Float
+  paid       Float
+  balance    Float
+  status     String
+  items      SaleItem[]
+}
+model SaleItem {
+  id          String  @id @default(cuid())
+  saleId      String
+  sale        Sale    @relation(fields: [saleId], references: [id])
+  sku         String
+  productName String
+  qty         Int
+  hppUnit     Float
+  hargaUnit   Float
+  totalHpp    Float
+  totalHarga  Float
+}
+model PaymentLog {
+  id       String   @id @default(cuid())
+  saleId   String
+  refNo    String
+  customer String
+  amount   Float
+  date     DateTime
+  note     String?
+}
+model OperationalCost {
+  id          String   @id @default(cuid())
+  periodId    String
+  period      Period   @relation(fields: [periodId], references: [id])
+  description String
+  amount      Float
+  createdAt   DateTime @default(now())
+}
